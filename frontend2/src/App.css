@@ -1,0 +1,608 @@
+.entire_page {
+
+}
+
+.contact_us {
+  font-size:1vw;
+  margin:auto;
+  margin-top:1vw;
+  text-align:center;
+}
+
+.top_bar_decoration {
+  height:10px;
+  background-color:rgb(1, 54, 139); /* change color to blue */
+  margin-top:0;
+}
+
+/* Header Container */
+.grid-container1 {
+  width:80%;
+  margin:auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap:1vw;
+  column-gap:1vw;
+}
+
+.tmulogo {
+  height: 4vw; /* Set height for the logo */
+}
+
+.tmulogo img {
+  width:auto; /* Ensure the logo image scales properly */
+  height: 100%; /* Make the logo fill the container's height */
+}
+
+#search_form {
+  display: flex;
+  align-items: center;
+  margin-right:0.5vw;
+  width:70%;
+}
+
+#search_text,
+#search_category,
+#search_location {
+  margin-right: 0.5vw; /* Add some spacing between input/select elements */
+  padding: 0.4vw 0.4vw;
+}
+
+#search_text {
+  width: 45%;
+  font-size:1vw;
+}
+
+#search_category{
+  width: 20%;
+  font-size:1vw;
+}
+
+#search_location {
+  width: 20%;
+  font-size:1vw;
+}
+
+#search_submit {
+  background-color: #007bff; /* Set background color for the submit button */
+  color: #fff; /* Set text color for the submit button */
+  border: none; /* Remove default border */
+  padding: 0.5vw 0.5vw; /* Add padding to the button */
+  cursor: pointer; /* Add cursor pointer */
+  font-size:1vw;
+  border-radius:0.4vw;
+}
+
+.login {
+  /* display: flex; */
+  align-items: center;
+  margin:auto;
+}
+
+.login2 {
+  display:none;
+}
+
+.login .link {
+  margin-right: 1vw; /* Add spacing between login links */
+  font-size:1vw;
+}
+
+/* Remove underline from React Router Link */
+.link {
+  text-decoration: none; /* Remove default underline from links */
+  color: #333; /* Set text color for links */
+}
+
+.link:hover {
+  text-decoration: underline; /* Add underline on hover for links */
+}
+
+.post_ad_btn {
+  width:8%;
+  text-align: center;
+  font-size:1.2vw;
+  margin-left:4vw;
+  padding: 0.5vw 0;
+  border-radius: 10%;
+  color:white;
+  background-color:rgb(0, 76, 155);
+}
+
+.items_wanted {
+  width:12%;
+  text-align: center;
+  font-size:1.2vw;
+  margin-left:12%;
+}
+
+.items_sale {
+  width: 12%;
+  text-align:center;
+  font-size:1.2vw;
+}
+
+.services {
+  width: 12%;
+  text-align:center;
+  font-size:1.2vw;
+  margin-right:25%;
+}
+
+/*
+.user_profile {
+  grid-row:2/3;
+  grid-column:1/2;
+}
+*/
+
+/* Grid Container 2 and all its elements, the content of the home page below the header */
+.grid-container2 {
+  /* border-color: brown; */
+  /* border-style: solid;; */
+  width:70%;
+  min-height: 50vh;
+  margin:auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1vw;
+  column-gap: 2vw;
+}
+
+.wanted_items_title {
+  flex: 0 0 calc(100%);
+  text-align:left;
+  height:100%;
+  border:none;
+  font-size:1.4vw;
+}
+
+.onsale_items_title {
+  flex: 0 0 calc(100%);
+  text-align:left;
+  height:100%;
+  border:none;
+  font-size:1.4vw;
+}
+
+.services_available_title {
+  flex: 0 0 calc(100%);
+  text-align:left;
+  height:100%;
+  border:none;
+  font-size:1.4vw;
+}
+
+
+.ad {
+  margin-top:4vw;
+  margin-bottom:2vw;
+}
+
+/* Everything below is not part of the flex boxes, its the previous layout with grid-template-row and grid-template-column */
+
+
+
+/* ------------------------------------------------------------------------------------------ */
+
+
+/* Header Container */
+@media (max-width:900px) {
+  .grid-container1 {
+    width:70%;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap:1vw;
+    column-gap:1vw;
+    height:10vw;
+  }
+
+  .tmulogo {
+    height: 5vw; /* Set height for the logo */
+  }
+
+  .tmulogo img {
+    width:auto; /* Ensure the logo image scales properly */
+    height: 100%; /* Make the logo fill the container's height */
+  }
+  
+  #search_form {
+    display: flex;
+    align-items: center;
+    margin-right:0.5vw;
+    width:80%;
+  }
+
+  #search_text,
+  #search_category,
+  #search_location {
+    margin-right: 0.5vw; /* Add some spacing between input/select elements */
+    padding: 0.8vw 0.4vw;
+  }
+
+  #search_text {
+    width: 40%;
+    font-size:1.2vw;
+  }
+
+  #search_category{
+    width: 25%;
+    font-size:1.2vw;
+  }
+
+  #search_location {
+    width: 25%;
+    font-size:1.2vw;
+  }
+
+  #search_submit {
+    background-color: #007bff; /* Set background color for the submit button */
+    color: #fff; /* Set text color for the submit button */
+    border: none; /* Remove default border */
+    padding: 0.9vw 0.5vw; /* Add padding to the button */
+    cursor: pointer; /* Add cursor pointer */
+    font-size:1.2vw;
+    border-radius:0.4vw;
+  }
+
+  .login {
+    display: flex;
+    align-items: center;
+    margin:0;
+    width:15%;
+  }
+
+  .login .link {
+    margin-right: 1vw; /* Add spacing between login links */
+    font-size:1.2vw;
+  }
+
+  /* Remove underline from React Router Link */
+  .link {
+    text-decoration: none; /* Remove default underline from links */
+    color: #333; /* Set text color for links */
+  }
+
+  .link:hover {
+    text-decoration: underline; /* Add underline on hover for links */
+  }
+
+  .items_wanted {
+    width:12%;
+    text-align: center;
+    font-size:1.2vw;
+  }
+  
+  .items_sale {
+    width: 12%;
+    text-align:center;
+    font-size:1.2vw;
+  }
+  
+  .services {
+    width: 12%;
+    text-align:left;
+    font-size:1.2vw;
+    margin-right:9%;
+  }
+
+  .post_ad_btn {
+    margin-left:2vw;
+    width:10%;
+    text-align: center;
+    font-size:1.6vw;
+    padding: 0.5% 0.1%;
+    border-radius: 10%;
+    color:white;
+    background-color:rgb(0, 76, 155);
+  }
+
+   /* Grid Container 2 and all its elements, the content of the home page below the header */
+   .grid-container2 {
+    width:75%;
+    min-height: 50vh;
+    margin:auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 5vw;
+    column-gap: 5vw;
+  }
+
+  .wanted_items_title {
+    flex: 0 0 calc(100%);
+    text-align:left;
+    height:100%;
+    border:none;
+    font-size:2vw;
+  }
+
+  .onsale_items_title {
+    flex: 0 0 calc(100%);
+    text-align:left;
+    height:100%;
+    border:none;
+    font-size:2vw;
+  }
+
+  .services_available_title {
+    flex: 0 0 calc(100%);
+    text-align:left;
+    height:100%;
+    border:none;
+    font-size:2vw;
+  }
+
+  /* wanted */
+  .item_wanted_image {
+    max-height:70%;
+    max-width:98%;
+
+  }
+
+  .item_wanted_title {
+    font-size:2vw;
+  }
+
+  .item_wanted_price {
+    font-size:2vw;
+  }
+
+  /* sale */
+  .item_sale_image {
+    max-height:70%;
+    max-width:98%;
+
+  }
+
+  .item_sale_title {
+    font-size:2vw;
+  }
+
+  .item_sale_price {
+    font-size:2vw;
+  }
+
+  /* service */
+  .service_image {
+    max-height:70%;
+    max-width:98%;
+
+  }
+
+  .service_title {
+    font-size:2vw;
+  }
+
+  .service_price {
+    font-size:2vw;
+  }
+
+  .ad {
+    margin-top:4vw;
+    margin-bottom:2vw;
+  }
+
+
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+
+
+/* Header Container */
+@media (max-width:500px) {
+  .grid-container1 {
+    width:90%;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap:5vw;
+    column-gap:2vw;
+    height:45vw;
+  }
+
+  .tmulogo {
+    width: 50%; /* Set height for the logo */
+    height:10vw;
+  }
+
+  .login2 {
+    display: flex;
+    align-items: center;
+    margin:auto;
+    margin-right:0;
+    display:inline;
+    text-align:right;
+  }
+
+  .login2 .link {
+    margin-left: 4vw; /* Add spacing between login links */
+    font-size:3vw;
+  }
+  
+  #search_form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right:0.5vw;
+    width:100%;
+    row-gap:2vw;
+    column-gap:1vw;
+  }
+
+  #search_text {
+    margin-right:0;
+    padding: 2vw 2vw;
+    width: 100%;
+    font-size:3.5vw;
+    margin-bottom:1.1vw;
+  }
+
+  #search_category,
+  #search_location {
+    padding: 2vw 2vw;
+    width: 39%;
+    font-size:3vw;
+  }
+
+
+  #search_submit {
+    background-color:rgb(0, 76, 155);
+    color: #fff;
+    border: none;
+    padding: 2vw 3vw;
+    cursor: pointer;
+    font-size:3vw;
+    border-radius:0.4vw;
+  }
+
+  .login {
+    display: flex;
+    align-items: center;
+    margin:0;
+    width:25%;
+    display:none;
+  }
+
+  .login .link {
+    margin-right: 2vw; /* Add spacing between login links */
+    font-size:2.5vw;
+  }
+
+  /* Remove underline from React Router Link */
+  .link {
+    text-decoration: none; /* Remove default underline from links */
+    color: #333; /* Set text color for links */
+  }
+
+  .link:hover {
+    text-decoration: underline; /* Add underline on hover for links */
+  }
+
+  .items_wanted {
+    width:25%;
+    text-align: center;
+    font-size:3.2vw;
+    margin-left:0;
+  }
+
+  .items_sale {
+    width: 25%;
+    text-align:center;
+    font-size:3.2vw;
+  }
+
+  .services {
+    width: 15%;
+    text-align:center;
+    font-size:3.2vw;
+    margin-right:0;
+  }
+
+  .post_ad_btn {
+    margin:0;
+    width:15%;
+    height:13%;
+    padding-top:1.5%;
+    font-size:3vw;
+    border-radius: 15%;
+    color:white;
+    background-color:rgb(0, 76, 155);
+  }
+  
+
+    /* Grid Container 2 and all its elements, the content of the home page below the header */
+  .grid-container2 {
+    width:90%;
+    min-height: 50vh;
+    margin:auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 5vw;
+    column-gap: 5vw;
+  }
+
+  .wanted_items_title {
+    flex: 0 0 calc(100%);
+    text-align:left;
+    height:100%;
+    border:none;
+    font-size:4vw;
+  }
+
+  .onsale_items_title {
+    flex: 0 0 calc(100%);
+    text-align:left;
+    height:100%;
+    border:none;
+    font-size:4vw;
+  }
+
+  .services_available_title {
+    flex: 0 0 calc(100%);
+    text-align:left;
+    height:100%;
+    border:none;
+    font-size:4vw;
+  }
+
+  /* wanted */
+  .item_wanted_image {
+    max-height:70%;
+    max-width:98%;
+
+  }
+
+  .item_wanted_title {
+    font-size:2.5vw;
+  }
+
+  .item_wanted_price {
+    font-size:2.5vw;
+  }
+
+  /* sale */
+  .item_sale_image {
+    max-height:70%;
+    max-width:98%;
+
+  }
+
+  .item_sale_title {
+    font-size:2.5vw;
+  }
+
+  .item_sale_price {
+    font-size:2.5vw;
+  }
+
+  /* service */
+  .service_image {
+    max-height:70%;
+    max-width:98%;
+
+  }
+
+  .service_title {
+    font-size:2.5vw;
+  }
+
+  .service_price {
+    font-size:2.5vw;
+  }
+
+  .ad {
+    margin-top:4vw;
+    margin-bottom:2vw;
+  }
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
