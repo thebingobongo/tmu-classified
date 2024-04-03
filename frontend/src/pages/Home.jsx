@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './App.css';
-import logo from './images/TMU-rgb.png';
-import pc_pic from './images/pc.jpeg';
+import './../App.css';
+import logo from './../assets/TMU-rgb.png';
+import pc_pic from './../assets/pc.jpeg';
 
 
 export function Items_wanted_adder() {

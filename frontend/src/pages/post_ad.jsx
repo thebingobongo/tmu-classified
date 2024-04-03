@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './register_signin.css';
 import './post_ad.css';
-import logo from './images/TMU-rgb.png';
-import pc_pic from './images/pc.jpeg';
+import logo from './../assets/TMU-rgb.png';
+import pc_pic from './../assets/pc.jpeg';
 
 function FileUploadBox() {
     const [imageSrc, setImageSrc] = useState(null);

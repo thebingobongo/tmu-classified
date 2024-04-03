@@ -2,15 +2,15 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Link} from 'react-router-dom';
 import './App.css';
 import logo from './assets/TMU-rgb.png';
-import Home from './Home';
-import RegisterAcc from './register_acc';
-import SignIn from './sign_in';
-import PostAd from './post_ad';
-import ItemsWanted from './items_wanted';
-import ItemsSale from './items_sale';
-import Services from './services';
-import UserProfile from './user_profile';
-import SearchResults from './search_results';
+import Home from './pages/Home';
+import RegisterAcc from './pages/register_acc';
+import SignIn from './pages/sign_in';
+import PostAd from './pages/post_ad';
+import ItemsWanted from './pages/items_wanted';
+import ItemsSale from './pages/items_sale';
+import Services from './pages/services';
+import UserProfile from './pages/user_profile';
+import SearchResults from './pages/search_results';
 
 function App() {
   return (
