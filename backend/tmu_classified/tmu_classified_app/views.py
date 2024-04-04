@@ -23,7 +23,7 @@ class LoginView(APIView):
     """
     Login the user with the given username and password.
     """
-    @swagger_auto_schema(request_body=LoginSerializer, security=[{'Token': []}], tags=['no_auth', 'user'])
+    @swagger_auto_schema(request_body=LoginSerializer, security=[{'Token': []}], tags=['user', 'no_auth'])
     def post(self, request, *args, **kwargs):
         serializer = LoginSerializer(data=request.data)
         username = request.data.get('username')
@@ -106,7 +106,7 @@ class UserInfoView(APIView):
 
 
 class AdView(APIView):
-    @swagger_auto_schema(tags=['ad'])
+    @swagger_auto_schema(tags=['ad', 'no_auth'])
     def get(self, request):
         num_of_ads = request.query_params.get('num_of_ads', None)
         category = request.query_params.get('category', None)
@@ -126,7 +126,7 @@ class AdView(APIView):
 
 
 class SearchView(APIView):
-    @swagger_auto_schema(tags=['ad'])
+    @swagger_auto_schema(tags=['ad', 'no_auth'])
     def get(self, request):
         search_string = request.query_params.get('search', None)
         category = request.query_params.get('category', None)

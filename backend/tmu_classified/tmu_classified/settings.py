@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework', 
     'drf_yasg',
+    'tmu_classified_app',
 ]
 
 MIDDLEWARE = [
@@ -122,6 +123,8 @@ STATIC_URL = 'static/'
 # Media files (User uploaded files)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+AUTH_USER_MODEL = 'tmu_classified_app.User'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

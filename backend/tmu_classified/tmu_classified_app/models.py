@@ -1,4 +1,4 @@
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin, Group, Permission
 import uuid
 from django.db import models
 
@@ -39,6 +39,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_admin = models.BooleanField(default=False, verbose_name='Is Admin')
     is_staff = models.BooleanField(default=False, verbose_name='Is Staff')
     is_superuser = models.BooleanField(default=False, verbose_name='Is Superuser')
+
 
     USERNAME_FIELD = 'username'
 
