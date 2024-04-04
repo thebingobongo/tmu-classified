@@ -46,8 +46,7 @@ function sign_in() {
         <br></br>
         <br></br>
         <br></br>
-        <br></br>
-        <br></br>
+
         </div>
 
     );

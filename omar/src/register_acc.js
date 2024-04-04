@@ -48,8 +48,7 @@ function register() {
         <br></br>
         <br></br>
         <br></br>
-        <br></br>
-        <br></br>
+
         </div>
 
     );

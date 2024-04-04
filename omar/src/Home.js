@@ -79,6 +79,7 @@ export function Header() {
             <div className='login'>
                 <Link className='link register_acc' to="/register_acc">Register</Link> <span> </span>
                 <Link className='link sign_in' to="/sign_in">Sign in</Link> <span> </span>
+                <Link className='link logout' to="/">Log out</Link> <span> </span>
             </div>
 
             {/* <Link className='user_profile' to="/user_profile">Profile</Link> <span> </span> */}

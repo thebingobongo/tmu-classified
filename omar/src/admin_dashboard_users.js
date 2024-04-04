@@ -7,7 +7,7 @@ import { Items_sale_adder, Items_wanted_adder, Services_adder } from './Home';
 
 
 
-function UserInfo() {
+export function UserInfo() {
     return (
         <div className='user_info_box'>
             <img className='user_profile_pic' src={logo} alt='pc' />

@@ -80,6 +80,22 @@
   margin:auto;
 }
 
+.userprofile_page .register_acc {
+  display:none;
+}
+
+.userprofile_page .sign_in {
+  display:none;
+}
+
+.logout {
+  display:none;
+}
+
+.userprofile_page .logout {
+  display:inline;
+}
+
 .login2 {
   display:none;
 }
@@ -130,6 +146,8 @@
   margin-right:25%;
 }
 
+
+
 /*
 .user_profile {
   grid-row:2/3;
@@ -175,11 +193,11 @@
   font-size:1.4vw;
 }
 
-
 .ad {
   margin-top:4vw;
   margin-bottom:2vw;
 }
+
 
 /* Everything below is not part of the flex boxes, its the previous layout with grid-template-row and grid-template-column */
 
@@ -601,6 +619,10 @@
   .ad {
     margin-top:4vw;
     margin-bottom:2vw;
+  }
+
+  .contact_us {
+    font-size:3vw;
   }
 
 }

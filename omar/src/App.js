@@ -9,10 +9,12 @@ import PostAd from './post_ad';
 import ItemsWanted from './items_wanted';
 import ItemsSale from './items_sale';
 import Services from './services';
-import UserProfile from './user_profile';
 import SearchResults from './search_results';
+import UserProfile from './user_profile';
+import MyAds from './my_ads';
 import AdminDashboard from './admin_dashboard';
 import AdminDashboardUsers from './admin_dashboard_users';
+
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
               <Route path="/items_sale" element={<ItemsSale />} />
               <Route path="/services" element={<Services />} />
               <Route path="/user_profile" element={<UserProfile />} />
+              <Route path="/my_ads" element={<MyAds/>} />
               <Route path="/search_results" element={<SearchResults />} />
               <Route path="/admin_dashboard" element={< AdminDashboard />} />
               <Route path="/admin_dashboard_users" element={< AdminDashboardUsers />} />
