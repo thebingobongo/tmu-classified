@@ -2,8 +2,6 @@
 
 # Django #
 ##########
-# Ignore the SQLite database file
-*.sqlite3
 
 # Ignore all log files
 *.log
