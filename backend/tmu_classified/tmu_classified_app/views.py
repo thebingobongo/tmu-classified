@@ -55,9 +55,9 @@ class RegisterView(APIView):
     """
     Register a new user with the given username, email, and password.
     """
-    @swagger_auto_schema(request_body=UserSerializer, tags=['no_auth'])
+    @swagger_auto_schema(request_body=RegisterSerializer, tags=['no_auth'])
     def post(self, request, *args, **kwargs):
-        serializer = UserSerializer(data=request.data)
+        serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
             token, created = Token.objects.get_or_create(user=user)
