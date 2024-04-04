@@ -8,6 +8,8 @@ import SignIn from './pages/SignIn'
 import PostAd from './pages/PostAd'
 import AdView from './pages/AdView'
 import Profile from './pages/Profile';
+import Chat from './pages/UserChat';
+
 
 function App() {
 
@@ -22,6 +24,7 @@ function App() {
               <Route path="/AdView" element={<AdView />} />
               <Route path='/SearchResults' element={<SearchResults />} />
               <Route path='/Profile' element={<Profile />} />
+              <Route path='/Chat' element={<Chat />} />
             </Routes>
     </BrowserRouter>
     </>
