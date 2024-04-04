@@ -1,5 +1,6 @@
 import React from 'react';
 import './SearchBar.css';
+import { Link } from 'react-router-dom';
 
 const SearchBar = () => {
     return (
@@ -13,7 +14,9 @@ const SearchBar = () => {
                     <option value="items-for-sale">Items for Sale</option>
                     <option value="academic-services">Academic Services</option>
                 </select>
-                <button className="search-button">Search</button>
+                {/* <button className="search-button">Search</button> */}
+                
+                <Link className='search-button' to='/SearchResults'>Search</Link> <span></span>
             </div>
         </div>
     );
