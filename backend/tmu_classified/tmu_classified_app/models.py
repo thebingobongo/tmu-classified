@@ -33,12 +33,12 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    userID = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    email = models.EmailField(verbose_name='email', max_length=100, unique=True)
-    username = models.CharField(max_length=30, unique=True)
-    is_admin = models.BooleanField(default=False)
-    is_staff = models.BooleanField(default=False)
-    is_superuser = models.BooleanField(default=False)
+    userID = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, verbose_name='User ID')
+    email = models.EmailField(verbose_name='Email', max_length=100, unique=True, blank=False, null=False)
+    username = models.CharField(verbose_name='Username', max_length=30, unique=True, blank=False, null=False)
+    is_admin = models.BooleanField(default=False, verbose_name='Is Admin')
+    is_staff = models.BooleanField(default=False, verbose_name='Is Staff')
+    is_superuser = models.BooleanField(default=False, verbose_name='Is Superuser')
 
     USERNAME_FIELD = 'username'
 
@@ -55,22 +55,23 @@ class User(AbstractBaseUser, PermissionsMixin):
     
 
 class Ad(models.Model):
-    ad_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    title = models.CharField(max_length=200)
-    description = models.TextField()
-    category = models.CharField(max_length=100)
-    sub_category = models.CharField(max_length=100)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    city = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='ads/')
+    ad_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, verbose_name='Ad ID')
+    title = models.CharField(max_length=200, verbose_name='Title')
+    description = models.TextField(verbose_name='Description')
+    category = models.CharField(max_length=100, verbose_name='Category')
+    sub_category = models.CharField(max_length=100, verbose_name='Sub Category')
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Price')
+    city = models.CharField(max_length=100, verbose_name='City')
+    image = models.ImageField(upload_to='ads/', verbose_name='Image')
 
     def __str__(self):
         return self.title
 
 class UserAdRelation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    ad = models.ForeignKey(Ad, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='User')
+    ad = models.ForeignKey(Ad, on_delete=models.CASCADE, verbose_name='Ad')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
 
     class Meta:
         unique_together = ('user', 'ad')
+
