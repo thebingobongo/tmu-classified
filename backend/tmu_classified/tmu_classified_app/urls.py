@@ -22,6 +22,7 @@ urlpatterns = [
 
     path('search/', SearchView.as_view(), name='search'),
     path('ads/', AdView.as_view(), name='ads'),
+    path('ads/<uuid:ad_id>/', GetAdView.as_view(), name='get_ad'),
     path('user_info/', UserInfoView.as_view(), name='user_info'),
     path('user_ads/', UserAdView.as_view(), name='user_ads'),
     path('change_password/', ChangePasswordView.as_view(), name='change_password'),

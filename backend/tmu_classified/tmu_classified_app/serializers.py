@@ -10,7 +10,7 @@ User = get_user_model()
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('userID', 'username', 'email', 'password')
+        fields = ('username', 'email')
 
     def create(self, validated_data):
         user = User.objects.create(
@@ -28,10 +28,18 @@ class AdSerializer(serializers.ModelSerializer):
         fields = ['ad_id', 'title', 'description', 'category', 'sub_category', 'price', 'city', 'image']
 
 
+class SingleAdSerializer(serializers.ModelSerializer):
+    username = serializers.ReadOnlyField(source='user.username')
+
+    class Meta:
+        model = Ad
+        fields = ['ad_id', 'username', 'title', 'description', 'price', 'city', 'image']
+
+
 class PostAdSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ad
-        fields = ['ad_id', 'title', 'description', 'category', 'sub_category', 'price', 'city']
+        fields = ['title', 'description', 'category', 'sub_category', 'price', 'city']
 
     def create(self, validated_data):
         request = self.context.get("request")
@@ -84,4 +92,4 @@ class EditProfileSerializer(serializers.ModelSerializer):
 class UserInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('userID', 'username', 'email', 'is_admin')
+        fields = ('username', 'email', 'is_admin')

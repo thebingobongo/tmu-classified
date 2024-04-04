@@ -3,6 +3,7 @@ from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
 
 from rest_framework import status, viewsets
 from rest_framework.authtoken.models import Token
@@ -22,7 +23,7 @@ class LoginView(APIView):
     """
     Login the user with the given username and password.
     """
-    @swagger_auto_schema(request_body=LoginSerializer, security=[{'Token': []}], tags=['user', 'no_auth'])
+    @swagger_auto_schema(request_body=LoginSerializer, security=[{'Token': []}], tags=['no_auth'])
     def post(self, request, *args, **kwargs):
         serializer = LoginSerializer(data=request.data)
         username = request.data.get('username')
@@ -44,7 +45,7 @@ class LogoutView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
-    @swagger_auto_schema(security=[{'Token': []}], tags=['user', 'needs_auth'])
+    @swagger_auto_schema(security=[{'Token': []}], tags=['needs_auth'])
     def post(self, request, *args, **kwargs):
         request.user.auth_token.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
@@ -54,7 +55,7 @@ class RegisterView(APIView):
     """
     Register a new user with the given username, email, and password.
     """
-    @swagger_auto_schema(request_body=UserSerializer, tags=['account', 'no_auth'])
+    @swagger_auto_schema(request_body=UserSerializer, tags=['no_auth'])
     def post(self, request, *args, **kwargs):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
@@ -71,7 +72,7 @@ class ChangePasswordView(APIView):
     """
     permission_classes = [IsAuthenticated]
 
-    @swagger_auto_schema(request_body=ChangePasswordSerializer, security=[{'Token': []}], tags=['account', 'needs_auth'])
+    @swagger_auto_schema(request_body=ChangePasswordSerializer, security=[{'Token': []}], tags=['needs_auth'])
     def post(self, request, *args, **kwargs):
         serializer = ChangePasswordSerializer(data=request.data)
         if serializer.is_valid():
@@ -87,7 +88,7 @@ class ChangePasswordView(APIView):
 class UserAdView(APIView):
     permission_classes = [IsAuthenticated]
 
-    @swagger_auto_schema(security=[{'Token': []}], tags=['ad', 'needs_auth'])
+    @swagger_auto_schema(security=[{'Token': []}], tags=['needs_auth'])
     def get(self, request):
         user_ad_relations = UserAdRelation.objects.filter(user=request.user)
         serializer = UserAdRelationSerializer(user_ad_relations, many=True)
@@ -97,7 +98,7 @@ class UserAdView(APIView):
 class UserInfoView(APIView):
     permission_classes = [IsAuthenticated]
 
-    @swagger_auto_schema(security=[{'Token': []}], tags=['user', 'needs_auth'])
+    @swagger_auto_schema(security=[{'Token': []}], tags=['needs_auth'])
     def get(self, request):
         user = request.user
         serializer = UserInfoSerializer(user)
@@ -105,7 +106,14 @@ class UserInfoView(APIView):
 
 
 class AdView(APIView):
-    @swagger_auto_schema(tags=['ad', 'no_auth'])
+    @swagger_auto_schema(
+        tags=['no_auth'],
+        manual_parameters=[
+            openapi.Parameter('num_of_ads', openapi.IN_QUERY, type=openapi.TYPE_INTEGER),
+            openapi.Parameter('category', openapi.IN_QUERY, type=openapi.TYPE_STRING),
+        ]
+    )
+
     def get(self, request):
         num_of_ads = request.query_params.get('num_of_ads', None)
         category = request.query_params.get('category', None)
@@ -124,8 +132,30 @@ class AdView(APIView):
         return Response(serializer.data)
 
 
+class GetAdView(APIView):
+    @swagger_auto_schema(tags=['no_auth'])
+    def get(self, request, ad_id):
+        try:
+            ad = Ad.objects.get(ad_id=ad_id)
+        except Ad.DoesNotExist:
+            return Response({'error': 'Ad not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = SingleAdSerializer(ad)
+        return Response(serializer.data)
+
+
 class SearchView(APIView):
-    @swagger_auto_schema(tags=['ad', 'no_auth'])
+    @swagger_auto_schema(
+        tags=['no_auth'],
+        manual_parameters=[
+            openapi.Parameter('search', openapi.IN_QUERY, type=openapi.TYPE_STRING),
+            openapi.Parameter('category', openapi.IN_QUERY, type=openapi.TYPE_STRING),
+            openapi.Parameter('sub_category', openapi.IN_QUERY, type=openapi.TYPE_STRING),
+            openapi.Parameter('city', openapi.IN_QUERY, type=openapi.TYPE_STRING),
+            openapi.Parameter('min_price', openapi.IN_QUERY, type=openapi.TYPE_NUMBER),
+            openapi.Parameter('max_price', openapi.IN_QUERY, type=openapi.TYPE_NUMBER),
+        ]
+    )
     def get(self, request):
         search_string = request.query_params.get('search', None)
         category = request.query_params.get('category', None)
@@ -157,7 +187,7 @@ class SearchView(APIView):
 class PostAdView(APIView):
     permission_classes = [IsAuthenticated]
 
-    @swagger_auto_schema(request_body=PostAdSerializer, security=[{'Token': []}], tags=['ad', 'needs_auth'])
+    @swagger_auto_schema(request_body=PostAdSerializer, security=[{'Token': []}], tags=['needs_auth'])
     def post(self, request):
         serializer = PostAdSerializer(data=request.data, context={"request": request})
         if serializer.is_valid():
