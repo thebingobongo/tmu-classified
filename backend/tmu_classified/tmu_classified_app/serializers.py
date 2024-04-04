@@ -20,6 +20,8 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
+    
+
 
 
 class AdSerializer(serializers.ModelSerializer):
@@ -35,6 +37,11 @@ class UserAdRelationSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserAdRelation
         fields = ['user', 'ad']
+    
+    
+    # def get_ads(self, obj):
+    #     ads = Ad.objects.filter(useradrelation__user=obj)
+    #     return AdSerializer(ads, many=True).data
 
 
 
@@ -47,3 +54,21 @@ class LoginSerializer(serializers.Serializer):
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(required=True)
     new_password = serializers.CharField(required=True)
+
+
+class EditProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'email')
+
+    def update(self, instance, validated_data):
+        instance.username = validated_data.get('username', instance.username)
+        instance.email = validated_data.get('email', instance.email)
+        instance.save()
+        return instance
+    
+
+class UserInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('userID', 'username', 'email', 'is_admin')
