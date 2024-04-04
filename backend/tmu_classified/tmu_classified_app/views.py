@@ -210,7 +210,7 @@ class DeleteAdView(DestroyAPIView):
             'ad_id': openapi.Schema(type=openapi.TYPE_STRING, description='UUID of the Ad'),
             'username': openapi.Schema(type=openapi.TYPE_STRING, description='Username of the User'),
         }
-    ), responses={200: 'Ad deleted', 403: 'Forbidden', 404: 'Not found'}, tags=['ads', 'needs_auth'])
+    ), responses={200: 'Ad deleted', 403: 'Forbidden', 404: 'Not found'}, tags=['needs_auth'])
     def delete(self, request, *args, **kwargs):
         ad_id = request.data.get('ad_id')
         username = request.data.get('username')
