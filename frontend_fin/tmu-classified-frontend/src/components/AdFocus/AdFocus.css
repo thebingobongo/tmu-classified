@@ -1,0 +1,72 @@
+.adfocus-section {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adfocus-container {
+    background-color: white;
+    width: 75%;
+    /* max-width: 1400px; This ensures the section doesn't get too wide on large screens */
+    margin: auto; /* This centers the section horizontally */
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+}
+
+.adfocus-left {
+    flex: 3;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    background-color: white;
+}
+
+.adfocus-right {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+}
+
+.adfocus-image {
+    width: auto;
+    height: 25rem;
+}
+
+.adfocus-title {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    background-color: white;
+}
+
+.adfocus-description {
+    margin-top: 20px;
+    font-size: 1.65rem;
+    background-color: white;
+}
+
+.adfocus-button {
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.adfocus-location {
+    font-size: 2rem;
+    background-color: white;
+    margin-bottom: 2rem;
+}
+
+.adfocus-price {
+    font-size: 2rem;
+    background-color: white;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
