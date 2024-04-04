@@ -39,7 +39,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-    matches = models.ManyToManyField('Match', through='PlayerMatchRelation', related_name='players')
 
     USERNAME_FIELD = 'username'
 
@@ -53,3 +52,25 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def has_module_perms(self, app_label):
         return True
+    
+
+class Ad(models.Model):
+    ad_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    category = models.CharField(max_length=100)
+    sub_category = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    city = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='ads/')
+
+    def __str__(self):
+        return self.title
+
+class UserAdRelation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    ad = models.ForeignKey(Ad, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'ad')
