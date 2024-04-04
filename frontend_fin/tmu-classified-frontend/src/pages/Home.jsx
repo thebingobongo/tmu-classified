@@ -13,15 +13,7 @@ const Home = () => {
         <AdSection numCards={3} title={"Items Wanted"}/>
         <AdSection numCards={3} title={"Academic Services"}/>
 
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+        
         <Footer />
 
     </div>
