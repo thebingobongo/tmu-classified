@@ -1,9 +1,8 @@
 from django.contrib.auth import authenticate, update_session_auth_hash
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Q
 from drf_yasg.utils import swagger_auto_schema
-
-# Create your views here.
 
 from rest_framework import status, viewsets
 from rest_framework.authtoken.models import Token
@@ -104,3 +103,54 @@ class UserInfoView(APIView):
         user = request.user
         serializer = UserInfoSerializer(user)
         return Response(serializer.data)
+
+
+class AdView(APIView):
+    @swagger_auto_schema(tags=['ad'])
+    def get(self, request):
+        num_of_ads = request.query_params.get('num_of_ads', None)
+        category = request.query_params.get('category', None)
+
+        if num_of_ads is not None:
+            num_of_ads = int(num_of_ads)
+        else:
+            num_of_ads = Ad.objects.count()  # default to all ads
+
+        if category is not None:
+            ads = Ad.objects.filter(category=category)[:num_of_ads]
+        else:
+            ads = Ad.objects.all()[:num_of_ads]
+
+        serializer = AdSerializer(ads, many=True)
+        return Response(serializer.data)
+
+
+class SearchView(APIView):
+    @swagger_auto_schema(tags=['ad'])
+    def get(self, request):
+        search_string = request.query_params.get('search', None)
+        category = request.query_params.get('category', None)
+        sub_category = request.query_params.get('sub_category', None)
+        city = request.query_params.get('city', None)
+        min_price = request.query_params.get('min_price', None)
+        max_price = request.query_params.get('max_price', None)
+
+        q_objects = Q()
+
+        if search_string is not None:
+            q_objects &= Q(title__icontains=search_string) | Q(description__icontains=search_string)
+        if category is not None:
+            q_objects &= Q(category=category)
+        if sub_category is not None:
+            q_objects &= Q(sub_category=sub_category)
+        if city is not None:
+            q_objects &= Q(city=city)
+        if min_price is not None:
+            q_objects &= Q(price__gte=min_price)
+        if max_price is not None:
+            q_objects &= Q(price__lte=max_price)
+
+        ads = Ad.objects.filter(q_objects)
+        serializer = AdSerializer(ads, many=True)
+        return Response(serializer.data)
+
