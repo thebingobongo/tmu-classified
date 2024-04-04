@@ -30,4 +30,5 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='login'),
     path('post_ad/', PostAdView.as_view(), name='post_ad'),
+    path('delete_ad/', DeleteAdView.as_view(), name='delete_ad'),
 ]
