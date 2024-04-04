@@ -6,24 +6,20 @@
     margin-top:2vw;
 }
 
-.post-ad-body {
-    margin-top: 4rem;
-}
-
 .signin-container {
-    width: 500px; /* Increased width */
-    margin: 0 auto;
-    padding: 40px; /* Increased padding */
-    border-radius: 8px;
+    width: 35%;
+    margin: 0vw auto;
+    padding: 2.5vw; /* Increased padding */
+    border-radius: 1vw;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     background-color: white;
 }
 
 .post-ad-container {
-    width: 80%; /* Increased width */
-    margin: 0 auto;
-    padding: 40px; /* Increased padding */
-    border-radius: 8px;
+    width: 75%;
+    margin: 2vw auto;
+    padding: 2.4vw;
+    border-radius: 0.5vw;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     background-color: white;
 }
@@ -31,40 +27,40 @@
 .signin-title {
     text-align: center;
     color: #333;
-    font-size: 2em; /* Increased font size */
-    margin-bottom: 2rem;
+    font-size: 1.8vw; /* Increased font size */
+    margin-bottom: 2vw;
     background-color: white;
 }
 
 .signin-form {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Increased gap */
+    gap: 1.4vw; /* Increased gap */
     background-color: white;
 }
 
 .signin-input {
-    padding: 15px; /* Increased padding */
-    border-radius: 4px;
+    padding: 1vw; /* Increased padding */
+    border-radius: 1vw;
     border: 1px solid #ddd;
-    font-size: 1.2em; /* Increased font size */
+    font-size: 1.2vw; /* Increased font size */
     background-color: white;
 }
 
 .signin-button {
-    padding: 15px; /* Increased padding */
-    border-radius: 4px;
+    padding: 1.2vw; /* Increased padding */
+    border-radius: 0.7vw;
     border: none;
     background-color: #004c9b;
     color: white;
     cursor: pointer;
-    font-size: 1.2em; /* Increased font size */
+    font-size: 1.4vw; /* Increased font size */
 }
 
 .signin-text {
     text-align: center;
-    margin-top: 20px; /* Increased margin-top */
-    font-size: 1.2em; /* Increased font size */
+    margin-top: 1.8vw; /* Increased margin-top */
+    font-size: 1.2vw; /* Increased font size */
     background-color: white;
 }
 
@@ -74,12 +70,35 @@ a {
 
 .signin-input label {
     display: block;
-    margin-bottom: 10px;
-    background-color: white;
+    margin-bottom:1vw;
 }
 
-.signin-input label input[type="radio"] {
-    margin-right: 10px;
+.signin-input input[type="radio"] {
+    display:none;
+}
+
+.radio_label0 {
+    display:inline-block;
+    cursor:pointer;
+
+    margin:auto;
+    margin-left:0;
+    margin-right:0.7vw;
+
+    height:1vw;
+    width:1vw;
+
+    border: 0.3vw solid rgb(200,200,200);
+    border-radius: 0.5vw;
+    background-color:white;
+}
+
+input[type="radio"]:checked + .radio_label0 {
+    border-color: blue;
+}
+
+.option_text, label {
+    background-color: white;
 }
 
 .signin-input option {
@@ -104,6 +123,52 @@ a {
     margin-bottom:0;
 }
 
-.signin-page .header-logo {
-    height:5vw;
+/*
+
+input[type="radio"] {
+    display:none;
 }
+
+
+.radio_label0 {
+    display:inline-block;
+    cursor:pointer;
+    margin-right:1vw;
+
+    margin:auto;
+    margin-left:0;
+    margin-right:0.7vw;
+
+    height:0.6vw;
+    width:0.6vw;
+
+    border: 0.4vw solid rgb(200,200,200);
+    border-radius: 1vw;
+    background-color:white;
+}
+
+.radio_label {
+    display:inline-block;
+    cursor:pointer;
+
+    margin:auto;
+    margin-left:0;
+    margin-right:0.7vw;
+
+    height:0.6vw;
+    width:0.6vw;
+
+    border: 0.4vw solid rgb(200,200,200);
+    border-radius: 1vw;
+    background-color:white;
+}
+
+input[type="radio"]:checked + .radio_label0 {
+    border-color: blue;
+}
+
+input[type="radio"]:checked + .radio_label {
+    border-color: blue;
+}
+
+*/
