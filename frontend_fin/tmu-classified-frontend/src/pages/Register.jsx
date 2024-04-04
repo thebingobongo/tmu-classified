@@ -1,9 +1,12 @@
 import React from 'react';
 import './SignIn.css'; // Reusing the same CSS file
 import { Link } from 'react-router-dom';
+import Header from '../components/Header/Header'
 
 const Register = () => {
     return (
+        <div className='signin-page'>
+            <Header />
         <div className='signin-body'>
             <div className="signin-container">
                 <h2 className="signin-title">Register</h2>
@@ -16,6 +19,7 @@ const Register = () => {
                 </form>
                 <p className="signin-text">Already have an account? <Link to="/SignIn" >Sign In</Link></p>
             </div>
+        </div>
         </div>
     );
 };
