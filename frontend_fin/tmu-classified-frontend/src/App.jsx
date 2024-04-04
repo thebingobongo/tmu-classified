@@ -6,6 +6,10 @@ import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import PostAd from './pages/PostAd'
 import AdView from './pages/AdView'
+<<<<<<< Updated upstream
+=======
+import SearchResults from './pages/SearchResults'
+>>>>>>> Stashed changes
 
 function App() {
 
