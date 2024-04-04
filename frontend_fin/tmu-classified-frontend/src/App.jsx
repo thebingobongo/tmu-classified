@@ -7,7 +7,6 @@ import SearchResults from './pages/SearchResults'
 import SignIn from './pages/SignIn'
 import PostAd from './pages/PostAd'
 import AdView from './pages/AdView'
-import SearchResults from './pages/SearchResults'
 import Profile from './pages/Profile';
 
 function App() {
