@@ -1,4 +1,4 @@
-.search-bar {
+.search-container {
     width:75%;
     max-width: 1280; /* Adjust as needed */
     margin: auto;
@@ -54,5 +54,5 @@
 }
 
 .search-button:hover {
-    background-color: #0056b3;
+    scale: 1.1;
 }

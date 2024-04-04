@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css'
 import Home from './pages/Home'
 import Register from './pages/Register'
+import SearchResults from './pages/SearchResults'
 import SignIn from './pages/SignIn'
 import PostAd from './pages/PostAd'
 import AdView from './pages/AdView'
