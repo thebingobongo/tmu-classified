@@ -1,0 +1,48 @@
+.header-section {
+    width:90%;
+    max-width: 1280; /* Adjust as needed */
+    margin: auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+
+
+}
+
+.header-logo {
+    height: 10rem;
+}
+
+.header-button {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #004c9b;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.big-button {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1.25rem 1rem;
+    margin-left: 1rem;
+}
+
+.header-button-group {
+    display: flex;
+    align-items: center;
+}
+
+.header-button-group button:hover {
+    transform: scale(1.1); 
+}
