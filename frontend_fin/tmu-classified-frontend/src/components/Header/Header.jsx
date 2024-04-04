@@ -1,21 +1,18 @@
 import React from 'react';
 import './Header.css';
 import logo from '../../assets/TMU-rgb.png'; // Import the logo file
-import { Link } from 'react-router-dom';
-
 
 const Header = () => {
     return (
       <div className='header-section'>
         <div className="header-container">
-            <Link to='/'>
+            <div>
                 <img className="header-logo" src={logo} alt="Logo" />
-            </Link>
+            </div>
             <div className="header-button-group">
-                <Link className='header-button' to='/Signin'>Login</Link> <span></span>
-                <Link className='header-button' to='/Register' >Sign Up</Link> <span></span>
-                <Link className='big-button header-button' to='/PostAd'>Post Ad!</Link> <span></span>
-                <Link className='header-button-profile' to='/Profile'>Profile</Link> <span></span>
+                <button className='header-button'>Login</button>
+                <button className='header-button'>Sign Up</button>
+                <button className='big-button header-button'>Post Ad!</button>
             </div>
         </div>
       </div>
