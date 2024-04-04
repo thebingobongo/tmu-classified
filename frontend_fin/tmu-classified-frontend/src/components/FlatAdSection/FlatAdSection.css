@@ -1,0 +1,28 @@
+.flat-ad-section {
+    width:75%;
+    max-width: 1280; /* Adjust as needed */
+    margin: auto;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.flat-ad-container {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); 
+}
+
+.flat-ad-section-title {
+    background-color: white;
+    padding: 10px;
+}
+
+.flat-ad-title-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: start;
+}
