@@ -12,10 +12,7 @@ const Home = () => {
         <AdSection numCards={3} title={"Items for Sale"}/>
         <AdSection numCards={3} title={"Items Wanted"}/>
         <AdSection numCards={3} title={"Academic Services"}/>
-
-        
         <Footer />
-
     </div>
   )
 }

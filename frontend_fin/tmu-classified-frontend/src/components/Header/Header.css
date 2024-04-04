@@ -19,7 +19,7 @@
     height: 10rem;
 }
 
-.header-button {
+.header-button, .header-button-profile {
     font-size: 1.5rem;
     margin-right: 10px;
     padding: 10px 20px;
@@ -45,4 +45,8 @@
 
 .header-button-group button:hover {
     transform: scale(1.1); 
+}
+
+.header-button-profile {
+    display:none;
 }

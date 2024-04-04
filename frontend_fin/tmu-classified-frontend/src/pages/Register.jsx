@@ -1,5 +1,6 @@
 import React from 'react';
 import './SignIn.css'; // Reusing the same CSS file
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     return (
@@ -13,7 +14,7 @@ const Register = () => {
                     <input type="password" placeholder="Confirm Password" className="signin-input" />
                     <button type="submit" className="signin-button">Create Account</button>
                 </form>
-                <p className="signin-text">Already have an account? <a href="/signin" className="my-link">Sign in</a></p>
+                <p className="signin-text">Already have an account? <Link to="/SignIn" >Sign In</Link></p>
             </div>
         </div>
     );
