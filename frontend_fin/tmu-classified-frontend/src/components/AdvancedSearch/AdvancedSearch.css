@@ -1,0 +1,94 @@
+.advanced-search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.advanced-search-container {
+    display: flex;
+    width: 75%;
+    justify-content: center;
+    padding: 20px;
+}
+
+.advanced-search-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+}
+
+.advanced-search-bar-wrapper {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); 
+}
+
+.advanced-search-input {
+    width: 100%;
+    font-size: 2rem;
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    background-color: transparent; 
+}
+
+.advanced-category-select, .advanced-subcategory-select, .advanced-location-select {
+    font-size: 1.75rem;
+    padding: 0.75rem;
+    padding-right: 2.75rem; 
+    margin-right: 0.25rem;
+    border: none;
+    border-right: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path fill="%23000" d="M5 6L0 0h10z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center; 
+    background-size: 1.5rem; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.advanced-price-input {
+    font-size: 1.75rem;
+    padding: 0.75rem;
+    padding-right: 2.75rem; 
+    margin-right: 0.25rem;
+    border: none;
+    border-right: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+.advanced-dropdowns {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+
+.advanced-prices {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.advanced-search-button {
+    font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    background-color: #ffdc00;
+    color: rgb(0, 0, 0);
+    transition: background-color 0.3s ease;
+}
+
+.advanced-search-button:hover {
+    scale: 1.1;
+}
