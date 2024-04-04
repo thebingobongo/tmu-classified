@@ -6,10 +6,7 @@ import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import PostAd from './pages/PostAd'
 import AdView from './pages/AdView'
-<<<<<<< Updated upstream
-=======
 import SearchResults from './pages/SearchResults'
->>>>>>> Stashed changes
 
 function App() {
 
@@ -22,6 +19,7 @@ function App() {
               <Route path="/SignIn" element={<SignIn />} />
               <Route path="/PostAd" element={<PostAd />} />
               <Route path="/AdView" element={<AdView />} />
+              <Route path='/SearchResults' element={<SearchResults />} />
             </Routes>
     </BrowserRouter>
     </>

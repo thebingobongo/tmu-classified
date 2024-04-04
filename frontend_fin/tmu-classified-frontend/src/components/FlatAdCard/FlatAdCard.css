@@ -1,0 +1,53 @@
+.flat-ad-card {
+    width: 90%;
+    height: 12rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    display: flex;
+}
+
+.flat-ad-image {
+    width: auto;
+    height: 10rem;
+}
+
+.flat-ad-title {
+    font-size: 2rem;
+    margin: 10px 0;
+    background-color: white;
+}
+
+.flat-ad-section1 {
+    background-color: white;
+    flex:1;
+}
+
+.flat-ad-section2 {
+    flex:3;
+    background-color: white;
+    width: 100%;
+}
+
+.flat-ad-section3 {
+    background-color: white;
+    flex:1;
+    align-items: flex-end;
+}
+
+
+.flat-ad-category,
+.flat-ad-subcategory {
+    font-size: 1.25rem;
+    margin: 10px 0;
+    background-color: white;
+}
+
+.flat-ad-price,
+.flat-ad-location {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    background-color: white;
+}
