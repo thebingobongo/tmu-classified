@@ -1,0 +1,73 @@
+# .gitignore
+
+# Django #
+##########
+# Ignore the SQLite database file
+*.sqlite3
+
+# Ignore all log files
+*.log
+
+# Ignore the local settings file
+local_settings.py
+
+# Ignore the media files (uploaded by users)
+media/
+
+# Ignore any cache files
+__pycache__/
+
+# Ignore the virtual environment
+myenv/
+
+# React #
+#########
+# Ignore node modules
+node_modules/
+
+# Ignore build directory
+/build/
+
+# Ignore the npm debug log
+npm-debug.log
+
+# Ignore environment variables
+.env
+
+# Ignore IDE specific files
+.idea/
+*.swp
+*.swo
+*.swn
+*.swm
+*.bak
+*.orig
+*.pyc
+*.pyo
+*.rej
+*.exe
+*.dll
+*.test
+*.DS_Store
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
