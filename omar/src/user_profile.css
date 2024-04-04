@@ -1,0 +1,239 @@
+.user_profile_container {
+    width:70%;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    row-gap:1vw;
+    column-gap:1vw;
+    border:none;
+}
+
+.user_profile_topbar {
+    display:flex;
+    flex-wrap: wrap;
+    width:60%;
+    border:none;
+}
+
+.topbar_section {
+    text-decoration: none;
+    color:black;
+    font-size:1.2vw;
+    margin:auto;
+    margin-left:0;
+}
+
+.topbar_section1 {
+    width:15%;
+}
+
+.topbar_section2 {
+    width:12%;
+}
+
+.topbar_section3 {
+    width:16%;
+}
+
+.topbar_section4 {
+    width:20%;
+}
+
+.topbar_section:hover {
+    text-decoration: underline;
+}
+
+.profile_content {
+    width:100%;
+    border:none;
+    margin-top:2vw;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+/* from dashboard */
+.userprofile_page .user_info_box {
+    width: 30%;
+    height: 18vw;
+    margin-bottom:2vw;
+    margin-right:0;
+    border:solid;
+    border-radius: 10%;
+    border-color:rgb(255,220,0);
+}
+
+.userprofile_page .user_profile_pic {
+    height:5vw;
+    width:auto;
+    margin:auto;
+    margin-top:2.5vw;
+    margin-bottom:0;
+    margin-right:0;
+    border:none;
+}
+
+.userprofile_page .user_full_name {
+    font-size:1.2vw;
+    margin-top:1vw;
+    margin-bottom:0vw;
+    
+}
+
+.userprofile_page .user_email {
+    font-size:1vw;
+    margin-top:1vw;
+    margin-bottom:1vw;
+}
+
+.userprofile_page .form_delete_user {
+    display: none;
+}
+
+.userprofile_page .btn_delete_user {
+    display: none;
+}
+
+.edit_profile {
+    width:60%;
+    border:none;
+    margin:auto;
+    margin-top:0;
+    margin-right:0;
+}
+
+#edit_email, #edit_password {
+    width:50%;
+    height:2vw;
+    margin-right:15vw;
+    margin-top:1vw;
+    font-size:1.1vw;
+}
+
+#edit_submit {
+    width:51.3%;
+    height:2vw;
+    margin-top:1vw;
+    font-size:1.1vw;
+}
+
+
+.user_profile_container .item_sale, .user_profile_container .item_wanted, .user_profile_container .service {
+    margin:auto;
+    margin-bottom: 3vw;
+    margin-right:2vw;
+    width:20%;
+}
+
+@media (max-width:500px) {
+
+    .user_profile_container {
+        width:87%;
+        margin:auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        row-gap:1vw;
+        column-gap:1vw;
+        border:none;
+    }
+    
+    .user_profile_topbar {
+        display:flex;
+        flex-wrap: wrap;
+        width:100%;
+        border:none;
+        margin-bottom:2vw;
+    }
+    
+    .topbar_section {
+        font-size:3vw;
+        margin:auto;
+    }
+    
+    .topbar_section1 {
+        width:18%;
+    }
+    
+    .topbar_section2 {
+        width:13%;
+    }
+    
+    .topbar_section3 {
+        width:18%;
+    }
+    
+    .topbar_section4 {
+        width:24%;
+    }
+
+    .profile_content {
+        width:100%;
+        margin-top:2vw;
+        display:flex;
+        flex-wrap: wrap;
+    }
+    
+    /* from dashboard */
+    .userprofile_page .user_info_box {
+        width: 60%;
+        min-height: 32vw;
+        margin:auto;
+        margin-bottom:4vw;
+        border:solid;
+        border-radius: 10%;
+        border-color:rgb(255,220,0);
+    }
+    
+    .userprofile_page .user_profile_pic {
+        height:15vw;
+        width:auto;
+        margin:auto;
+        margin-top:2.5vw;
+        margin-bottom:0;
+        border:none;
+    }
+    
+    .userprofile_page .user_full_name {
+        font-size:4vw;
+        margin-top:1vw;
+        margin-bottom:0vw;
+        
+    }
+    
+    .userprofile_page .user_email {
+        font-size:3vw;
+        margin-top:1vw;
+        margin-bottom:1vw;
+    }
+    
+    .edit_profile {
+        width:80%;
+        min-height:25vw;
+        margin:auto;
+    }
+    
+    #edit_email, #edit_password {
+        width:97%;
+        height:8vw;
+        margin:auto;
+        margin-top:3vw;
+        padding-right:0vw;
+        padding-left:1vw;;
+        font-size:4vw;
+
+    }
+    
+    #edit_submit {
+        width:100%;
+        height:8vw;
+        margin-top:3vw;
+        font-size:4vw;
+    }
+
+    .user_profile_container .item_sale, .user_profile_container .item_wanted, .user_profile_container .service {
+        margin:auto;
+        margin-bottom: 3vw;
+        width:30%;
+    }
+}
