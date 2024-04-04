@@ -8,7 +8,7 @@ const AdSection = ({ numCards, title }) => {
     const cards = [...Array(numCards)].map((_, i) => (
         <AdCard
         key={i}
-        image='../../../assets/Charizard-flying.avif'
+        image='/pc.jpeg'
         title={`Item ${i+1}`}
         price={`$${(i+1)*10}`}
         location="Location"

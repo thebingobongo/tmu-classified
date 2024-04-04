@@ -5,20 +5,25 @@
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .ad-image {
     width: 100%;
-    height: auto;
+    height: 80%;
 }
 
 .ad-title {
     font-size: 1.5rem;
     margin: 10px 0;
+    background-color: white;
 }
 
 .ad-price,
 .ad-location {
     font-size: 1.25rem;
     margin: 5px 0;
+    background-color: white;
 }
