@@ -1,30 +1,35 @@
-.header-section {
-    width:90%;
-    max-width: 1280; /* Adjust as needed */
-    margin: auto;
+.home-page-container {
+    width:100%;
 }
 
 .header-container {
     display: flex;
+    flex-wrap: wrap;
+    width:75%;
+    margin:auto;
+    margin-top:1.2vw;
     justify-content: space-between;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    padding-left: 10rem;
-    padding-right: 10rem;
+}
 
-
+.header-logo-link {
+    width:15%;
 }
 
 .header-logo {
-    height: 10rem;
+    width:100%;
+    height:100%;
+}
+
+.link {
+    text-decoration: none;
 }
 
 .header-button, .header-button-profile {
-    font-size: 1.5rem;
-    margin-right: 10px;
-    padding: 10px 20px;
+    font-size: 1vw;
+    margin-right: 1vw;
+    padding: 0.5vw 1vw;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.5vw;
     background-color: #004c9b;
     color: white;
     cursor: pointer;
@@ -32,10 +37,10 @@
 }
 
 .big-button {
-    font-size: 2rem;
+    font-size: 1.2vw;
     font-weight: bold;
-    padding: 1.25rem 1rem;
-    margin-left: 1rem;
+    padding: 1vw 1vw;
+    margin-left: 1vw;
 }
 
 .header-button-group {
