@@ -65,7 +65,7 @@ class Ad(models.Model):
     image = models.ImageField(upload_to='ads/', verbose_name='Image')
 
     def __str__(self):
-        return self.title
+        return self.ad_id
 
 class UserAdRelation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='User')
