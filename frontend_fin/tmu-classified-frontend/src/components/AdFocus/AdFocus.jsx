@@ -16,6 +16,7 @@ const AdFocus = ({ ad }) => {
                     <p className="adfocus-location">{location}</p>
                     <p className="adfocus-price">{price}</p>
                     <button className="adfocus-button">Contact</button>
+                    <button className="adfocus-button">Email</button>
                 
                 </div>
             </div>
