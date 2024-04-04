@@ -22,12 +22,25 @@ class UserSerializer(serializers.ModelSerializer):
         return user
     
 
-
-
 class AdSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ad
         fields = ['ad_id', 'title', 'description', 'category', 'sub_category', 'price', 'city', 'image']
+
+
+class PostAdSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ad
+        fields = ['ad_id', 'title', 'description', 'category', 'sub_category', 'price', 'city']
+
+    def create(self, validated_data):
+        request = self.context.get("request")
+        if request and hasattr(request, "user"):
+            user = request.user
+        ad = Ad.objects.create(**validated_data)
+        UserAdRelation.objects.create(user=user, ad=ad)
+        return ad
+
 
 
 class UserAdRelationSerializer(serializers.ModelSerializer):

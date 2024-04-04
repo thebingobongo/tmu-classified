@@ -13,8 +13,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
 from .models import Ad, UserAdRelation
-from .serializers import (UserSerializer, AdSerializer, UserAdRelationSerializer, LoginSerializer, ChangePasswordSerializer,
-                          UserInfoSerializer)
+from .serializers import * 
 from django.contrib.auth.hashers import make_password, check_password
 
 # Create your views here.
@@ -153,4 +152,16 @@ class SearchView(APIView):
         ads = Ad.objects.filter(q_objects)
         serializer = AdSerializer(ads, many=True)
         return Response(serializer.data)
+
+
+class PostAdView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    @swagger_auto_schema(request_body=PostAdSerializer, security=[{'Token': []}], tags=['ad', 'needs_auth'])
+    def post(self, request):
+        serializer = PostAdSerializer(data=request.data, context={"request": request})
+        if serializer.is_valid():
+            ad = serializer.save()
+            return Response({"ad_id": ad.ad_id}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
