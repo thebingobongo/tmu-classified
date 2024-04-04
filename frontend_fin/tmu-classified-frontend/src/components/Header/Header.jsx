@@ -8,13 +8,14 @@ const Header = () => {
     return (
       <div className='header-section'>
         <div className="header-container">
-            <div>
+            <Link to='/'>
                 <img className="header-logo" src={logo} alt="Logo" />
-            </div>
+            </Link>
             <div className="header-button-group">
                 <Link className='header-button' to='/Signin'>Login</Link> <span></span>
                 <Link className='header-button' to='/Register' >Sign Up</Link> <span></span>
-                <Link className='big-button header-button' to='PostAd'>Post Ad!</Link> <span></span>
+                <Link className='big-button header-button' to='/PostAd'>Post Ad!</Link> <span></span>
+                <Link className='header-button-profile' to='/Profile'>Profile</Link> <span></span>
             </div>
         </div>
       </div>

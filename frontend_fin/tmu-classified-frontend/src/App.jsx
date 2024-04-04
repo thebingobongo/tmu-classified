@@ -7,6 +7,7 @@ import SignIn from './pages/SignIn'
 import PostAd from './pages/PostAd'
 import AdView from './pages/AdView'
 import SearchResults from './pages/SearchResults'
+import Profile from './pages/Profile';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
               <Route path="/PostAd" element={<PostAd />} />
               <Route path="/AdView" element={<AdView />} />
               <Route path='/SearchResults' element={<SearchResults />} />
+              <Route path='/Profile' element={<Profile />} />
             </Routes>
     </BrowserRouter>
     </>
