@@ -167,19 +167,21 @@ class SearchView(APIView):
         q_objects = Q()
 
         if search_string is not None:
-            q_objects &= Q(title__icontains=search_string) | Q(description__icontains=search_string)
+            q_objects &= Q(title__icontains=search_string) | Q(description__icontains=search_string) | Q(sub_category__icontains=search_string)
         if category is not None:
-            q_objects &= Q(category=category)
+            q_objects &= Q(category__iexact=category)
         if sub_category is not None:
-            q_objects &= Q(sub_category=sub_category)
+            q_objects &= Q(sub_category__iexact=sub_category)
         if city is not None:
-            q_objects &= Q(city=city)
+            q_objects &= Q(city__iexact=city)
         if min_price is not None:
             q_objects &= Q(price__gte=min_price)
         if max_price is not None:
             q_objects &= Q(price__lte=max_price)
 
+        print(q_objects)  # Print the query
         ads = Ad.objects.filter(q_objects)
+        print(ads)  # Print the results
         serializer = AdSerializer(ads, many=True)
         return Response(serializer.data)
 

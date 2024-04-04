@@ -43,7 +43,7 @@ class SingleAdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ad
-        fields = ['ad_id', 'username', 'title', 'description', 'price', 'city', 'image']
+        fields = ['ad_id', 'username', 'title', 'description','category', 'sub_category', 'price', 'city', 'image']
 
 
 class PostAdSerializer(serializers.ModelSerializer):
