@@ -1,15 +1,25 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css'
-import AdView from './pages/AdView'
 import Home from './pages/Home'
-import PostAd from './pages/PostAd'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
+import PostAd from './pages/PostAd'
+import AdView from './pages/AdView'
 
 function App() {
 
   return (
     <>
-      <AdView />
+    <BrowserRouter >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Register" element={<Register />} />
+              <Route path="/SignIn" element={<SignIn />} />
+              <Route path="/PostAd" element={<PostAd />} />
+              <Route path="/AdView" element={<AdView />} />
+            </Routes>
+    </BrowserRouter>
     </>
   )
 }
