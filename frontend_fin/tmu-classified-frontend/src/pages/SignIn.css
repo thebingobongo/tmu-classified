@@ -86,12 +86,3 @@ a {
     background-color: white;
     color: white;
 }
-
-
-.post-ad-page .header-button {
-    display:none;
-}
-
-.post-ad-page .header-button-profile {
-    display:inline;
-}
