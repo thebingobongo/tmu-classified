@@ -1,19 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SignIn.css'; // Importing the CSS file
 import { Link } from 'react-router-dom';
 import Header from '../components/Header/Header'
 
 const SignIn = () => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const response = await fetch('http://127.0.0.1:8000/login/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username,
+                password,
+            }),
+        });
+
+        const data = await response.json();
+
+        if (response.status === 400) {
+            // Todo: error text on the login prompt
+            alert(data.error);
+        } else {
+            sessionStorage.setItem('token', data.token);
+            sessionStorage.setItem('loggedin', 'true');
+            // Todo: Send the user to the previous page or home page and display a banner showing we logged in ig
+
+        }
+    };
+
     return (
         <div className='signin-page'>
             <Header />
             <div className='signin-body'>
                 <div className="signin-container">
                     <h2 className="signin-title">Login to TMU Classified</h2>
-                    <form className="signin-form">
-                        <input type="text" placeholder="Username" className="signin-input" />
-                        <input type="password" placeholder="Password" className="signin-input" />
-                        <button type="submit" className="signin-button">Sign In</button>
+                    <form className="signin-form" onSubmit={handleSubmit}>
+                        <input type="text" placeholder="Username" className="signin-input" value={username} onChange={(e) => setUsername(e.target.value)} />
+                        <input type="password" placeholder="Password" className="signin-input" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <button type="submit" className="signin-button" onClick={handleSubmit}>Sign In</button>
                     </form>
                     <p className="signin-text">Don't have an account? <Link to="/Register" >Create one</Link></p>
                 </div>
