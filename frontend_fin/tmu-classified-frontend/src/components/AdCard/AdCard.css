@@ -1,10 +1,10 @@
 .ad-card {
-    margin-left:0;
-    margin-right:2vw;
+    margin-left:0.75vw;;
+    margin-right:1.5vw;
     margin-top:1vw;
 
     max-width: 20vw;
-    min-width: 15vw;
+    min-width: 16vw;
     max-height: 30vw;
     min-height: 30vw;
 
@@ -49,22 +49,56 @@
 
 
 @media (max-width:500px) {
+
     .ad-card {
-        width: 25vw;
-        padding: 2vw;
-        margin:auto;
-        margin-top:4vw;
+        margin-left:1.2vw;;
+        margin-right:3vw;
+        margin-top:2vw;
+        margin-bottom:1vw;
+    
+        max-width: 25vw;
+        min-width: 25vw;
+        max-height: 50vw;
+        min-height: 50vw;
+    
+        border: 0.1vw solid #ccc;
+        border-radius: 0.5vw;
+        padding: 0.3vw;
+    
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .ad-image-link {
+        max-width:100%;
+        height:25vw;
+        margin:0;
+        margin-top:1vw;
+        border:solid;
+    }
+    
+    .ad-image {
+        width: 100%;
+        max-height:100%;
     }
     
     .ad-title {
         font-size: 3vw;
-        margin-bottom:2vw;
-        margin-top:4vw;
+        font-weight:normal;
+        margin:auto;
+        margin-top:1vw;
+        background-color: white;
+        width:100%;
     }
     
     .ad-price,
     .ad-location {
-        font-size: 2.8vw;
-        margin: 1vw 0;
+        font-size: 2.6vw;
+        margin: 0.4vw 0;
+        background-color: white;
+        width:100%;
     }
+
 }
