@@ -11,9 +11,21 @@ const SearchResults = () => {
     useEffect(() => {
         const search = searchParams.get('search');
         const category = searchParams.get('category');
+        const subCategory = searchParams.get('sub_category');
+        const city = searchParams.get('city');
+        const minPrice = searchParams.get('min_price');
+        const maxPrice = searchParams.get('max_price');
 
-        // Fetch data from the API based on the search and category
-        fetch(`http://127.0.0.1:8000/search?search=${search}&category=${category}`)
+        let queryParams = new URLSearchParams();
+        if (search) queryParams.append('search', search);
+        if (category) queryParams.append('category', category);
+        if (subCategory) queryParams.append('sub_category', subCategory);
+        if (city) queryParams.append('city', city);
+        if (minPrice) queryParams.append('min_price', minPrice);
+        if (maxPrice) queryParams.append('max_price', maxPrice);
+
+        // Fetch data from the API based on the search parameters
+        fetch(`http://127.0.0.1:8000/search?${queryParams.toString()}`)
             .then((response) => response.json())
             .then((data) => console.log(data));
     }, [searchParams]);

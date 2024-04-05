@@ -70,3 +70,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 backend/tmu_classified/tmu_classified/__pycache__/
+backend/tmu_classified/db.sqlite3
