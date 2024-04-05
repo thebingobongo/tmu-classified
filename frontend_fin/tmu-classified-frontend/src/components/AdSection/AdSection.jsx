@@ -14,6 +14,7 @@ const AdSection = ({ numCards, title }) => {
     const cards = data.map((item, i) => (
         <AdCard
         key={item.ad_id}
+        ad_id={item.ad_id}
         image={item.image || '/image_missing.jpg'} // Use the image from the data if it exists, otherwise use a default image
         title={item.title}
         price={`$${item.price}`}
