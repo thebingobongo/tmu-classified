@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import AdvancedSearch from '../components/AdvancedSearch/AdvancedSearch';
@@ -7,6 +7,7 @@ import Footer from '../components/Footer/Footer';
 
 const SearchResults = () => {
     const [searchParams] = useSearchParams();
+    const [data, setData] = useState(null); 
 
     useEffect(() => {
         const search = searchParams.get('search');
@@ -27,14 +28,14 @@ const SearchResults = () => {
         // Fetch data from the API based on the search parameters
         fetch(`http://127.0.0.1:8000/search?${queryParams.toString()}`)
             .then((response) => response.json())
-            .then((data) => console.log(data));
+            .then((data) => setData(data));
     }, [searchParams]);
 
     return (
         <div className='search-results-page'>
             <Header />
             <AdvancedSearch />
-            <FlatAdSection title={"Results"} />
+            <FlatAdSection title={"Results"} data={data} /> 
             <Footer />
         </div>
     );

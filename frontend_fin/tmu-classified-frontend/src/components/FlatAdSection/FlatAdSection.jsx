@@ -2,20 +2,21 @@ import React from 'react'
 import FlatAdCard from '../FlatAdCard/FlatAdCard'
 import "./FlatAdSection.css"
 
-const FlatAdSection = ({ title }) => {
+const FlatAdSection = ({ title, data }) => {
   
-    // Create an array with numCards elements and map over it to create the AdCards
-    const cards = [...Array(4)].map((_, i) => (
+    // Map over the data array to create the AdCards
+    console.log(data);
+    const cards = data ? data.map((item, i) => (
         <FlatAdCard
-        key={i}
-        image='/pc.jpeg'
-        title={`Item ${i+1}`}
-        category={"Items for Sale"}
-        subcategory={"Car"}
-        price={`$${(i+1)*10}`}
-        location="Toronto"
+        key={item.ad_id}
+        image={item.image || '/image_missing.jpg'} // Use the image from the data if it exists, otherwise use a default image
+        title={item.title}
+        category={item.category}
+        subcategory={item.sub_category}
+        price={`$${item.price}`}
+        location={item.city}
         />
-    ));
+    )) : null;
 
     return (
         <div className='flat-ad-section'>
@@ -28,6 +29,5 @@ const FlatAdSection = ({ title }) => {
         </div>
     )
 }
-
 
 export default FlatAdSection
