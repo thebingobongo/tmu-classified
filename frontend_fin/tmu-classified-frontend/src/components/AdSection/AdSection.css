@@ -1,22 +1,22 @@
 .ad-section {
     width:75%;
-    max-width: 1280; /* Adjust as needed */
     margin: auto;
     align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }
 
 .ad-container {
-    padding: 10px;
-    border-radius: 15px;
+    padding: 1vw;
+    border-radius: 1vw;
     background-color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); 
 }
 
 .ad-section-title {
     background-color: white;
-    padding: 10px;
+    padding: 0.5vw;
+    font-size:1.4vw;
 }
 
 .ad-title-container {
@@ -24,4 +24,31 @@
     display: flex;
     justify-content:flex-start;
     align-items: center;
+}
+
+@media (max-width:500px) {
+    .ad-section {
+        width:90%;
+        margin-top: 2vw;
+    }
+    
+    .ad-container {
+        padding: 2vw;
+        border-radius: 1vw;
+        background-color: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); 
+    }
+    
+    .ad-section-title {
+        background-color: white;
+        padding: 0vw;
+        font-size:3.5vw;
+    }
+    
+    .ad-title-container {
+        background-color: white;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+    }
 }

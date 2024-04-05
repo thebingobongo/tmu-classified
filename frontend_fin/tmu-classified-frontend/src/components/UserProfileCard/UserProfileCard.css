@@ -1,41 +1,101 @@
-.user-profile-card {
-    width: 80%;
+.user-profile-page {
+    width:75%;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user-profile-card1 {
+    width: 40%;
     margin: 0 auto;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 2vw;
+    margin-top:2vw;
+    border-radius: 0.8vw;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     background-color: white;
 }
 
-.username-text, .email-text {
-    font-size: 2rem;
+.user-profile-card2 {
+    width: 40%;
+    margin: 0 auto;
+    padding: 2vw;
+    margin-top:2vw;
+    border-radius: 0.8vw;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+
+.username-text, .email-text, .num-ads {
+    font-size: 1.2vw;
     text-align: center;
     color: #333;
     background-color: white;
-
+    margin-bottom:2vw;
 }
 
 .password-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.5vw;
     background-color: white;
 }
 
 .password-input {
-    font-size: 1.2rem;
-    padding: 10px;
-    border-radius: 4px;
+    font-size: 1vw;
+    padding: 1vw;
+    border-radius: 1vw;
     border: 1px solid #ddd;
     background-color: white;
 }
 
 .password-button {
-    font-size: 1.5rem;
-    padding: 10px;
-    border-radius: 4px;
+    font-size: 1vw;
+    padding: 1vw;
+    border-radius: 0.5vw;
     border: none;
     background-color: #007BFF;
     color: white;
     cursor: pointer;
+}
+
+@media (max-width:500px) {
+    .user-profile-page {
+        width:90%;
+    }
+    
+    .user-profile-card1 {
+        width: 80%;
+        padding: 5vw;
+        margin-top:5vw;
+        border-radius: 1vw;
+    }
+    
+    .user-profile-card2 {
+        width: 80%;
+        margin: 0 auto;
+        padding: 5vw;
+        margin-top:4vw;
+        border-radius: 2vw;
+    }
+    
+    .username-text, .email-text, .num-ads {
+        font-size: 3vw;
+    }
+    
+    .password-form {
+        gap: 2vw;
+    }
+    
+    .password-input {
+        font-size: 3vw;
+        padding: 2vw;
+        border-radius: 2vw;
+    }
+    
+    .password-button {
+        font-size: 3vw;
+        padding: 2vw;
+        border-radius: 1vw;
+    }
 }

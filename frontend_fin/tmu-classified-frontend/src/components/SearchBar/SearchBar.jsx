@@ -3,7 +3,6 @@ import './SearchBar.css';
 
 const SearchBar = () => {
     return (
-        <div className='search-container'>
             <div className="search-bar">
                 <input type="text" placeholder="Search..." className="search-input" />
                 <select className="category-select">
@@ -15,7 +14,6 @@ const SearchBar = () => {
                 </select>
                 <button className="search-button">Search</button>
             </div>
-        </div>
     );
 };
 

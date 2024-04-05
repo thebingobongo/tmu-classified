@@ -1,13 +1,19 @@
 .ad-card {
-    width: 20rem;
-    height: 25rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
+    width: 13vw;
+    border: 0.1vw solid #ccc;
+    border-radius: 0.5vw;
+    padding: 0.9vw;
+    margin-left:0;
+    margin-right:2vw;
+    margin-top:1vw;
     background-color: white;
     display: flex;
     flex-direction: column;
+}
+
+.ad-image-link {
+    width:100%;
+    margin:auto;
 }
 
 .ad-image {
@@ -16,14 +22,37 @@
 }
 
 .ad-title {
-    font-size: 1.5rem;
-    margin: 10px 0;
+    font-size: 1.3vw;
+    font-weight:normal;
+    margin: 1vw 0;
     background-color: white;
 }
 
 .ad-price,
 .ad-location {
-    font-size: 1.25rem;
-    margin: 5px 0;
+    font-size: 1.2vw;
+    margin: 0.4vw 0;
     background-color: white;
+}
+
+
+@media (max-width:500px) {
+    .ad-card {
+        width: 25vw;
+        padding: 2vw;
+        margin:auto;
+        margin-top:4vw;
+    }
+    
+    .ad-title {
+        font-size: 3vw;
+        margin-bottom:2vw;
+        margin-top:4vw;
+    }
+    
+    .ad-price,
+    .ad-location {
+        font-size: 2.8vw;
+        margin: 1vw 0;
+    }
 }

@@ -6,7 +6,7 @@ import Footer from '../components/Footer/Footer'
 
 const Home = () => {
   return (
-    <div>
+    <div className='home-page-container'>
         <Header />
         <SearchBar />
         <AdSection numCards={3} title={"Items for Sale"}/>

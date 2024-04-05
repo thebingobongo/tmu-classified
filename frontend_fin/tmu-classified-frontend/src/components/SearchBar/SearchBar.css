@@ -1,40 +1,40 @@
 .search-container {
     width:75%;
-    max-width: 1280; /* Adjust as needed */
     margin: auto;
+    margin-top:1vw;
 }
 
 .search-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 0.4vw;
+    border-radius: 0.5vw;
     background-color: white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 0.2vw 0.5vw rgba(0, 0, 0, 0.2); 
 }
 
 .search-input {
-    font-size: 2rem;
+    font-size: 1.2vw;
     flex-grow: 1;
-    padding: 10px;
+    padding: 0.5vw;
     border: none;
     border-right: 1px solid #ccc; 
     background-color: transparent; 
 }
 
 .category-select {
-    font-size: 1.75rem;
-    padding: 0.75rem;
-    padding-right: 2.75rem; 
-    margin-right: 0.25rem;
+    font-size: 1.2vw;
+    padding: 1vw;
+    padding-right: 2vw; 
+    margin-right: 0.2vw;
     border: none;
     border-right: 1px solid #ccc;
     background-color: transparent;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path fill="%23000" d="M5 6L0 0h10z"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 0.75rem center; 
-    background-size: 1.5rem; 
+    background-position: right 1vw center; 
+    background-size: 1vw; 
     -webkit-appearance: none; 
     -moz-appearance: none;
     appearance: none;
@@ -42,9 +42,10 @@
 
 
 .search-button {
-    font-size: 2rem;
-    padding: 10px 20px;
-    margin-left: 1rem;
+    font-size: 1.2vw;
+    padding: 0.8vw 1.4vw;
+    margin-left: 1vw;
+    margin-right: 0.7vw;
     border: none;
     background-color: #ffdc00;
     border-radius: 5px;
@@ -55,4 +56,41 @@
 
 .search-button:hover {
     scale: 1.1;
+}
+
+@media (max-width:500px) {
+    .search-bar {
+        width:90%;
+        margin-top:3vw;
+        margin-bottom:2vw;
+        padding: 1vw;
+        border-radius: 1vw;
+    }
+
+    .search-input {
+        font-size: 3.4vw;
+        padding: 1vw;
+    }
+    
+    .category-select {
+        font-size: 2.5vw;
+        padding: 2vw;
+        padding-right: 0vw; 
+        margin-right: 2vw;
+        background-position: right 1vw center; 
+        background-size: 1vw; 
+    }
+    
+    .search-button {
+        font-size: 3vw;
+        padding: 1.5vw 2vw;
+        margin-left: 0vw;
+        margin-right: 1vw;
+        border: none;
+    }
+    
+    .search-button:hover {
+        background-color: #0056b3;
+    }
+
 }
