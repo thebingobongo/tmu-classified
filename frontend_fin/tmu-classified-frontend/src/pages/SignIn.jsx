@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import './SignIn.css'; // Importing the CSS file
-import { Link } from 'react-router-dom';
-import Header from '../components/Header/Header'
+import { Link, useNavigate } from 'react-router-dom';
+import Header from '../components/Header/Header';
+import { useAuth } from '../components/AuthContext';
 
 const SignIn = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const { handleLogin } = useAuth();
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -31,6 +34,9 @@ const SignIn = () => {
             sessionStorage.setItem('loggedin', 'true');
             // Todo: Send the user to the previous page or home page and display a banner showing we logged in ig
 
+
+            handleLogin();
+            navigate('/');
         }
     };
 
