@@ -6,7 +6,7 @@ import Footer from '../components/Footer/Footer'
 
 const SearchResults = () => {
   return (
-    <div>
+    <div className='search-results-page'>
         
         <Header />
         <AdvancedSearch />

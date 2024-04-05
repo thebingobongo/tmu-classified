@@ -1,24 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import logo from '../../assets/TMU-rgb.png'; // Import the logo file
 import { Link } from 'react-router-dom';
 
-
 const Header = () => {
+
+    const [isLoggedIn, setIsLoggedIn] = useState(true); // change to false to see how it looks when logged out
+
+    const handleLogout = () => {
+        setIsLoggedIn(false);
+    };
+
     return (
-      <div className='header-section'>
         <div className="header-container">
-            <Link to='/'>
+            <Link className='header-logo-link' to='/'>
                 <img className="header-logo" src={logo} alt="Logo" />
             </Link>
             <div className="header-button-group">
-                <Link className='header-button' to='/Signin'>Login</Link> <span></span>
-                <Link className='header-button' to='/Register' >Sign Up</Link> <span></span>
-                <Link className='header-button' to='/Profile'>Profile</Link> <span></span>
-                <Link className='big-button header-button' to='/PostAd'>Post Ad!</Link> <span></span>
+                {!isLoggedIn && <Link className='link header-button' to='/Register' >Sign Up</Link>}
+                {!isLoggedIn && <Link className='link header-button' to='/Signin'>Login</Link>}
+                {isLoggedIn && <Link className='link header-button-profile' to='/Profile'>Profile</Link>}
+                {isLoggedIn && <button className='link header-button' onClick={handleLogout}>Logout</button>}
+                <span></span>
+                <Link className='link big-button header-button' to='/PostAd'>Post Ad!</Link> <span></span>
             </div>
         </div>
-      </div>
     );
 };
 

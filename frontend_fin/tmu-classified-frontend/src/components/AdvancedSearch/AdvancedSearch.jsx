@@ -1,5 +1,5 @@
 import React from 'react';
-import './AdvancedSearch.css'; // Importing the CSS file
+import './AdvancedSearch.css';
 
 const AdvancedSearch = () => {
     return (
@@ -12,7 +12,6 @@ const AdvancedSearch = () => {
                 <div className="advanced-dropdowns">
                     <select className="advanced-category-select">
                         <option value="">All Categories</option>
-                        {/* Add more categories as needed */}
                         <option value="items-wanted">Items Wanted</option>
                         <option value="items-for-sale">Items for Sale</option>
                         <option value="academic-services">Academic Services</option>
@@ -24,7 +23,6 @@ const AdvancedSearch = () => {
                         <option value="Cellphone">Cellphone</option>
                         <option value="Textbook">Textbook</option>
                         <option value="Other">Other</option>
-                        {/* <!-- Add more options as needed --> */}
                     </select>
                     <select className="advanced-location-select">
                         <option value="">All Locations</option>
@@ -35,8 +33,8 @@ const AdvancedSearch = () => {
                     </select>
                 </div>
                 <div className="advanced-prices">
-                    <input type="number" placeholder="Price Greater Than" className="advanced-price-input" />
-                    <input type="number" placeholder="Price Lower Than" className="advanced-price-input" />
+                    <input type="number" placeholder="Price Lower Than" className="advanced-price-input input1" />
+                    <input type="number" placeholder="Price Greater Than" className="advanced-price-input input2" />
                 </div>
                 <button className="advanced-search-button">Search</button>
             </div>

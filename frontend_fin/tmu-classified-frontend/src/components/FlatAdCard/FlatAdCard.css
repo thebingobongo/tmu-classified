@@ -1,21 +1,22 @@
 .flat-ad-card {
-    width: 90%;
-    height: 12rem;
+    width: 95%;
+    margin:auto;
+    margin-bottom:2vw;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
+    border-radius: 0.5vw;
+    padding: 1vw;
     background-color: white;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .flat-ad-image {
-    width: auto;
-    height: 10rem;
+    max-width: 100%;
+    max-height: 14vw;
 }
 
 .flat-ad-title {
-    font-size: 2rem;
+    font-size: 1.5vw;
     margin: 10px 0;
     background-color: white;
 }
@@ -26,7 +27,7 @@
 }
 
 .flat-ad-section2 {
-    flex:3;
+    flex:2;
     background-color: white;
     width: 100%;
 }
@@ -35,19 +36,73 @@
     background-color: white;
     flex:1;
     align-items: flex-end;
+    border-left:solid 1px rgb(255,220,0);
 }
 
 
 .flat-ad-category,
 .flat-ad-subcategory {
-    font-size: 1.25rem;
-    margin: 10px 0;
+    font-size: 1.5vw;
+    font-weight:normal;
+    margin: 1vw 0;
     background-color: white;
 }
 
 .flat-ad-price,
 .flat-ad-location {
-    font-size: 1.8rem;
-    margin: 10px 0;
+    font-size: 1.5vw;
+    margin: 1vw 0;
     background-color: white;
+    text-align: right;
+}
+
+@media (max-width:500px) {
+    .flat-ad-card {
+        width: 95%;
+        margin:auto;
+        margin-top:2vw;
+        margin-bottom:1vw;
+        border-radius: 0.5vw;
+        padding: 1vw;
+
+    }
+    
+    .flat-ad-image {
+        max-height: 25vw;
+    }
+    
+    .flat-ad-title {
+        font-size: 3.2vw;
+        margin: 2vw 0;
+    }
+
+    .flat-ad-section1 {
+        flex:1;
+        margin-right:2vw;
+    }
+    
+    .flat-ad-section2 {
+        flex:1.3;
+    }
+    
+    .flat-ad-section3 {
+        background-color: white;
+        flex:0.7;
+        align-items: flex-end;
+        border-left:solid 1px rgb(255,220,0);
+    }
+    
+    
+    .flat-ad-category,
+    .flat-ad-subcategory {
+        font-size: 2.5vw;
+        margin: 2vw 0;
+    }
+    
+    .flat-ad-price,
+    .flat-ad-location {
+        font-size: 3.0vw;
+        margin: 2vw 0;
+    }
+
 }

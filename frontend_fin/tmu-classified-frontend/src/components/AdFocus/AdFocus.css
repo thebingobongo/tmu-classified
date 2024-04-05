@@ -8,8 +8,7 @@
 .adfocus-container {
     background-color: white;
     width: 75%;
-    /* max-width: 1400px; This ensures the section doesn't get too wide on large screens */
-    margin: auto; /* This centers the section horizontally */
+    margin: auto;
     display: flex;
     justify-content: space-between;
     padding: 20px;

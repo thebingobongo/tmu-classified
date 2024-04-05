@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const SearchBar = () => {
     return (
-        <div className='search-container'>
             <div className="search-bar">
                 <input type="text" placeholder="Search..." className="search-input" />
                 <select className="category-select">
@@ -18,7 +17,6 @@ const SearchBar = () => {
                 
                 <Link className='search-button' to='/SearchResults'>Search</Link> <span></span>
             </div>
-        </div>
     );
 };
 
