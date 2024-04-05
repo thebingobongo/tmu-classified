@@ -9,10 +9,13 @@ import AdView from './pages/AdView'
 import SearchResults from './pages/SearchResults'
 import Profile from './pages/Profile';
 
+import { AuthProvider } from './components/AuthContext';
+
 function App() {
 
   return (
     <>
+    <AuthProvider>
     <BrowserRouter >
             <Routes>
               <Route path="/" element={<Home />} />
@@ -24,6 +27,7 @@ function App() {
               <Route path='/Profile' element={<Profile />} />
             </Routes>
     </BrowserRouter>
+    </AuthProvider>
     </>
   )
 }

@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Header.css';
 import logo from '../../assets/TMU-rgb.png'; // Import the logo file
 import { Link } from 'react-router-dom';
+import { useAuth } from '../AuthContext'; // Import useAuth hook
 
 const Header = () => {
-
-    const [isLoggedIn, setIsLoggedIn] = useState(true); // change to false to see how it looks when logged out
-
-    const handleLogout = () => {
-        setIsLoggedIn(false);
-    };
+    const { isLoggedIn, handleLogout } = useAuth();
 
     return (
         <div className="header-container">
