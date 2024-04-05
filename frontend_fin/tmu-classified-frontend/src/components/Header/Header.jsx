@@ -16,9 +16,10 @@ const Header = () => {
                 {!isLoggedIn && <Link className='link header-button' to='/Register' >Sign Up</Link>}
                 {!isLoggedIn && <Link className='link header-button' to='/Signin'>Login</Link>}
                 {isLoggedIn && <Link className='link header-button-profile' to='/Profile'>Profile</Link>}
-                {isLoggedIn && <button className='link header-button' onClick={handleLogout}>Logout</button>}
+                {isLoggedIn && <Link className='link header-button' to='/' onClick={handleLogout}>Logout</Link>}
                 <span></span>
-                <Link className='link big-button header-button' to='/PostAd'>Post Ad!</Link> <span></span>
+                {isLoggedIn && <Link className='link big-button header-button' to='/PostAd'>Post Ad!</Link>}
+                <span></span>
             </div>
         </div>
     );
