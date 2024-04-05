@@ -18,8 +18,7 @@ const Header = () => {
                 {isLoggedIn && <Link className='link header-button-profile' to='/Profile'>Profile</Link>}
                 {isLoggedIn && <Link className='link header-button' to='/' onClick={handleLogout}>Logout</Link>}
                 <span></span>
-                {isLoggedIn && <Link className='link big-button header-button' to='/PostAd'>Post Ad!</Link>}
-                <span></span>
+                <Link className='link big-button header-button' to='/PostAd'>Post Ad!</Link><span></span>
             </div>
         </div>
     );
