@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import AdCard from '../AdCard/AdCard'
+import React, { useEffect, useState } from 'react';
+import AdCard from '../AdCard/AdCard';
 import './AdSection.css';
+import 'swiper/swiper-bundle.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const AdSection = ({ numCards, title }) => {
     const [data, setData] = useState([]);
@@ -11,27 +13,31 @@ const AdSection = ({ numCards, title }) => {
             .then((data) => setData(data));
     }, [numCards, title]);
 
-    const cards = data.map((item, i) => (
-        <AdCard
-        key={item.ad_id}
-        ad_id={item.ad_id}
-        image={item.image || '/image_missing.jpg'} // Use the image from the data if it exists, otherwise use a default image
-        title={item.title}
-        price={`$${item.price}`}
-        location={item.city}
-        />
-    ));
-
     return (
         <div className='ad-section'>
             <div className='ad-container'>
-                <h1 className='ad-section-title'> {title} </h1>
-                <div className='ad-title-container'>
-                    {cards}
-                </div>
+                <h1 className='ad-section-title'>{title}</h1>
+                <Swiper
+                    spaceBetween={0}
+                    slidesPerView={4}
+                    navigation
+                    loop
+                >
+                    {data.map((item, i) => (
+                        <SwiperSlide key={item.ad_id}>
+                            <AdCard
+                                ad_id={item.ad_id}
+                                image={item.image || '/image_missing.jpg'}
+                                title={item.title}
+                                price={`$${item.price}`}
+                                location={item.city}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default AdSection
+export default AdSection;
