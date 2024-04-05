@@ -9,9 +9,15 @@ const SignIn = () => {
     const [password, setPassword] = useState('');
     const { handleLogin } = useAuth();
     const navigate = useNavigate();
+    const [error, setError] = useState(''); 
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        if ( !username || !password ) {
+            setError('All fields must be filled in.');
+            return;
+        }
 
         const response = await fetch('http://127.0.0.1:8000/login/', {
             method: 'POST',
@@ -46,9 +52,10 @@ const SignIn = () => {
             <div className='signin-body'>
                 <div className="signin-container">
                     <h2 className="signin-title">Login to TMU Classified</h2>
+                    {error && <div className="error-text">{error}</div>} 
                     <form className="signin-form" onSubmit={handleSubmit}>
-                        <input type="text" placeholder="Username" className="signin-input" value={username} onChange={(e) => setUsername(e.target.value)} />
-                        <input type="password" placeholder="Password" className="signin-input" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input type="text" placeholder="Username" className="signin-input" required value={username} onChange={(e) => setUsername(e.target.value)} />
+                        <input type="password" placeholder="Password" className="signin-input" required value={password} onChange={(e) => setPassword(e.target.value)} />
                         <button type="submit" className="signin-button" onClick={handleSubmit}>Sign In</button>
                     </form>
                     <p className="signin-text">Don't have an account? <Link to="/Register" >Create one</Link></p>
