@@ -22,6 +22,7 @@ const FlatAdSection = ({ title, data }) => {
         <div className='flat-ad-section'>
             <div className='flat-ad-container'>
                 <h1 className='flat-ad-section-title'> {title} </h1>
+                {data && <div className='flat-ad-data-length'>Number of Results: {data.length}</div>}
                 <div className='flat-ad-title-container'>
                     {cards}
                 </div>

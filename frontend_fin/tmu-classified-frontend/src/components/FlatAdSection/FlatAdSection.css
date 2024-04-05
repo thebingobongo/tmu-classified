@@ -27,6 +27,12 @@
     font-weight: bold;
 }
 
+.flat-ad-data-length {
+    background-color: white;
+    padding-left: 1vw;
+    font-size: 1vw;
+}
+
 .flat-ad-title-container {
     background-color: white;
     display: flex;
