@@ -9,6 +9,7 @@ const FlatAdSection = ({ title, data }) => {
     const cards = data ? data.map((item, i) => (
         <FlatAdCard
         key={item.ad_id}
+        ad_id={item.ad_id}
         image={item.image || '/image_missing.jpg'} // Use the image from the data if it exists, otherwise use a default image
         title={item.title}
         category={item.category}

@@ -1,12 +1,15 @@
 import React from 'react';
 import './FlatAdCard.css';
+import { Link } from 'react-router-dom';
 
-const FlatAdCard = ({ image, title, category, subcategory, price, location }) => {
+const FlatAdCard = ({ad_id, image, title, category, subcategory, price, location }) => {
     return (
         <div className="flat-ad-card">
 
             <div className='flat-ad-section1'>
+            <Link to={`/AdView/${ad_id}`}>
                 <img src={image} alt={title} className="flat-ad-image" />
+            </Link>
             </div>
 
             <div className='flat-ad-section2'>
