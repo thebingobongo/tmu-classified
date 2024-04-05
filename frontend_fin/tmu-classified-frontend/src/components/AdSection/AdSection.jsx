@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AdCard from '../AdCard/AdCard'
 import './AdSection.css';
 
 const AdSection = ({ numCards, title }) => {
-  
-    // Create an array with numCards elements and map over it to create the AdCards
-    const cards = [...Array(numCards)].map((_, i) => (
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://127.0.0.1:8000/search?category=${title}&limit=${numCards}`)
+            .then((response) => response.json())
+            .then((data) => setData(data));
+    }, [numCards, title]);
+
+    const cards = data.map((item, i) => (
         <AdCard
-        key={i}
-        image='/pc.jpeg'
-        title={`Item ${i+1}`}
-        price={`$${(i+1)*10}`}
-        location="Location"
+        key={item.ad_id}
+        image={item.image || '/image_missing.jpg'} // Use the image from the data if it exists, otherwise use a default image
+        title={item.title}
+        price={`$${item.price}`}
+        location={item.city}
         />
     ));
 
