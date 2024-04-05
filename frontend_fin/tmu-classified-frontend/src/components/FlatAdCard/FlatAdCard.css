@@ -36,6 +36,7 @@
     background-color: white;
     flex:1;
     align-items: flex-end;
+    border-left:solid 1px rgb(255,220,0);
 }
 
 
