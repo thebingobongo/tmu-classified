@@ -3,7 +3,7 @@
     margin:auto;
     margin-bottom:2vw;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 0.5vw;
     padding: 1vw;
     background-color: white;
     display: flex;
@@ -11,12 +11,12 @@
 }
 
 .flat-ad-image {
-    width: auto;
-    height: 10rem;
+    max-width: 100%;
+    max-height: 15vw;
 }
 
 .flat-ad-title {
-    font-size: 2rem;
+    font-size: 1.5vw;
     margin: 10px 0;
     background-color: white;
 }
@@ -27,7 +27,7 @@
 }
 
 .flat-ad-section2 {
-    flex:3;
+    flex:2;
     background-color: white;
     width: 100%;
 }
@@ -41,14 +41,16 @@
 
 .flat-ad-category,
 .flat-ad-subcategory {
-    font-size: 1.25rem;
-    margin: 10px 0;
+    font-size: 1.5vw;
+    font-weight:normal;
+    margin: 1vw 0;
     background-color: white;
 }
 
 .flat-ad-price,
 .flat-ad-location {
-    font-size: 1.8rem;
-    margin: 10px 0;
+    font-size: 1.5vw;
+    margin: 1vw 0;
     background-color: white;
+    text-align: right;
 }
