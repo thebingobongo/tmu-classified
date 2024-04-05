@@ -1,21 +1,31 @@
-import React from 'react'
-import Header from '../components/Header/Header'
-import AdvancedSearch from '../components/AdvancedSearch/AdvancedSearch'
-import FlatAdSection from '../components/FlatAdSection/FlatAdSection'
-import Footer from '../components/Footer/Footer'
+import React, { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import Header from '../components/Header/Header';
+import AdvancedSearch from '../components/AdvancedSearch/AdvancedSearch';
+import FlatAdSection from '../components/FlatAdSection/FlatAdSection';
+import Footer from '../components/Footer/Footer';
 
 const SearchResults = () => {
-  return (
-    <div className='search-results-page'>
-        
-        <Header />
-        <AdvancedSearch />
-        <FlatAdSection title={"Results"} />
-        <Footer />
+    const [searchParams] = useSearchParams();
 
+    useEffect(() => {
+        const search = searchParams.get('search');
+        const category = searchParams.get('category');
 
-    </div>
-  )
-}
+        // Fetch data from the API based on the search and category
+        fetch(`http://127.0.0.1:8000/search?search=${search}&category=${category}`)
+            .then((response) => response.json())
+            .then((data) => console.log(data));
+    }, [searchParams]);
 
-export default SearchResults
+    return (
+        <div className='search-results-page'>
+            <Header />
+            <AdvancedSearch />
+            <FlatAdSection title={"Results"} />
+            <Footer />
+        </div>
+    );
+};
+
+export default SearchResults;
