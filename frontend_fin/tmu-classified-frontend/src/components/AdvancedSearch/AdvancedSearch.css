@@ -102,3 +102,107 @@
     scale: 1.1;
     cursor: pointer;
 }
+
+
+@media (max-width:500px) {
+    
+    .advanced-search-container {
+        width: 100%;
+        padding:0;
+    }
+    
+    .advanced-search-bar {
+        margin-top:6vw;
+        row-gap:3vw;
+    }
+    
+    .advanced-search-bar-wrapper {
+        height:12vw;
+        padding: 2vw;
+        border-radius: 1vw;
+        background-color: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    
+    .advanced-search-input {
+        width: 100%;
+        font-size: 3.5vw;
+        padding: 2vw;
+        border: none;
+        background-color: transparent; 
+        text-decoration: none;
+    }
+    
+    .advanced-dropdowns {
+        width:100%;
+        margin:0;
+        margin-top:2vw;
+    }
+    
+    .advanced-prices {
+        width:100%;
+        margin:0;
+        display:flex;
+        flex-wrap: wrap;
+    }
+    
+    .advanced-category-select, .advanced-subcategory-select, .advanced-location-select {
+        width:31%;
+        height:10vw;
+        font-size: 2.8vw; 
+        border: none;
+        border-right: 1px solid #cccccc00;
+        border-radius: 1vw;
+        background-color: white;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path fill="%23000" d="M5 6L0 0h10z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 0.8vw center; 
+        background-size: 2vw; 
+        padding:2vw;
+        margin:auto;
+        margin-right:3vw;
+    }
+    
+    .advanced-price-input {
+        width:48%;
+        height:9vw;
+        font-size: 3vw;
+        padding: 1vw;
+        padding-right: 1vw; 
+        border-radius: 1vw;
+        margin-top:1vw;
+    }
+
+    .input1 {
+        margin-right:3.5vw;
+    }
+
+    .input2 {
+        margin-right:0;
+    }
+    
+    .advanced-location-select {
+        margin-right:0;
+    }
+    
+    
+    .advanced-search-button {
+        width:100%;
+        height:8vw;
+        font-size: 3.2vw;
+        padding: 1vw 3.2vw;
+        border-radius: 0.5vw;
+        border: none;
+        background-color: #ffdc00;
+        color: rgb(0, 0, 0);
+        transition: background-color 0.3s ease;
+        margin:0;
+        margin-top:1vw;
+
+    }
+    
+    .advanced-search-button:hover {
+        scale: 1.1;
+        cursor: pointer;
+    }
+}
