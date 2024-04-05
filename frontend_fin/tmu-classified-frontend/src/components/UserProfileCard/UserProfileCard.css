@@ -34,6 +34,22 @@
     margin-bottom:2vw;
 }
 
+.error-text {
+    text-align: center;
+    font-size: 1.2vw;
+    background-color: white;
+    color: red;
+    font-weight: bold;
+}
+
+.success-text {
+    text-align: center;
+    font-size: 1.2vw;
+    background-color: white;
+    color: green;
+    font-weight: bold;
+}
+
 .password-form {
     display: flex;
     flex-direction: column;
