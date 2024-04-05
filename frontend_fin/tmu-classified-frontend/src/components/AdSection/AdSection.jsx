@@ -24,7 +24,7 @@ const AdSection = ({ numCards, title }) => {
                     loop
                 >
                     {data.map((item, i) => (
-                        <SwiperSlide key={item.ad_id}>
+                        <SwiperSlide className='swipe-tag' key={item.ad_id}>
                             <AdCard
                                 ad_id={item.ad_id}
                                 image={item.image || '/image_missing.jpg'}

@@ -26,6 +26,10 @@
     align-items: center;
 }
 
+.swipe-tag {
+    background-color: white;
+}
+
 @media (max-width:500px) {
     .ad-section {
         width:90%;
