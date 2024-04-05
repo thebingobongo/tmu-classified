@@ -25,6 +25,7 @@ const FlatAdSection = ({ title, data }) => {
                 <div className='flat-ad-title-container'>
                     {cards}
                 </div>
+                {data && data.length === 0 && <div className='flat-ad-error-text'>No results found.</div>}
             </div>
         </div>
     )

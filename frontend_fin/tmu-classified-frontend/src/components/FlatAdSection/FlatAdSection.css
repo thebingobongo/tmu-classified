@@ -19,6 +19,14 @@
     font-size:1.8vw;
 }
 
+.flat-ad-error-text {
+    background-color: white;
+    padding: 1vw;
+    font-size:1.5vw;
+    color: red;
+    font-weight: bold;
+}
+
 .flat-ad-title-container {
     background-color: white;
     display: flex;
