@@ -14,9 +14,19 @@ export const AuthProvider = ({ children }) => {
     };
 
     const handleLogout = () => {
-        setIsLoggedIn(false);
-        sessionStorage.removeItem('token');
-        sessionStorage.removeItem('loggedin');
+        const token = sessionStorage.getItem('token');
+        fetch('http://127.0.0.1:8000/logout/', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Token ${token}`,
+                'accept': 'application/json'
+            }
+        })
+        .then(() => {
+            setIsLoggedIn(false);
+            sessionStorage.removeItem('token');
+            sessionStorage.removeItem('loggedin');
+        });
     };
 
     return (
