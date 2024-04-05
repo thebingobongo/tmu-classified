@@ -53,9 +53,7 @@
     transform: scale(1.1); 
 }
 
-.header-button-profile {
-    display:none;
-}
+
 
 @media (max-width:500px) {
     .header-container {
@@ -91,8 +89,4 @@
         transform: scale(1.1); 
     }
     
-    .header-button-profile {
-        display:none;
-    }
-
 }
