@@ -1,22 +1,22 @@
 .flat-ad-section {
-    width:75%;
-    max-width: 1280; /* Adjust as needed */
+    width:100%;
     margin: auto;
     align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }
 
 .flat-ad-container {
-    padding: 10px;
-    border-radius: 15px;
+    padding: 1vw;
+    border-radius: 1vw;
     background-color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); 
 }
 
 .flat-ad-section-title {
     background-color: white;
-    padding: 10px;
+    padding: 1vw;
+    font-size:1.8vw;
 }
 
 .flat-ad-title-container {
@@ -25,4 +25,32 @@
     flex-direction: column;
     justify-content:flex-start;
     align-items: start;
+    margin-top:1vw;
+}
+
+@media (max-width:500px) {
+
+    .flat-ad-section {
+        margin-top: 4vw;
+    }
+    
+    .flat-ad-container {
+        padding: 4vw;
+        border-radius: 2vw;
+    }
+    
+    .flat-ad-section-title {
+        background-color: white;
+        padding: 2vw;
+        font-size:4vw;
+    }
+    
+    .flat-ad-title-container {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: start;
+    }
+
 }

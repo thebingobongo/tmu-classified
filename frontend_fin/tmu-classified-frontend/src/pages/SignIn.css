@@ -9,7 +9,7 @@
 .signin-container {
     width: 35%;
     margin: 0vw auto;
-    padding: 2.5vw; /* Increased padding */
+    padding: 2.5vw;
     border-radius: 1vw;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     background-color: white;
@@ -27,7 +27,7 @@
 .signin-title {
     text-align: center;
     color: #333;
-    font-size: 1.8vw; /* Increased font size */
+    font-size: 1.8vw;
     margin-bottom: 2vw;
     background-color: white;
 }
@@ -35,32 +35,49 @@
 .signin-form {
     display: flex;
     flex-direction: column;
-    gap: 1.4vw; /* Increased gap */
+    gap: 1.4vw;
     background-color: white;
 }
 
 .signin-input {
-    padding: 1vw; /* Increased padding */
+    padding: 1vw;
     border-radius: 1vw;
     border: 1px solid #ddd;
-    font-size: 1.2vw; /* Increased font size */
+    font-size: 1.2vw;
+    background-color: white;
+}
+
+.title-input {
+    padding: 1vw;
+    border-radius: 1vw;
+    border: 1px solid #ddd;
+    font-size: 1.2vw;
+    background-color: white;
+    width:100%;
+}
+
+.description-input {
+    padding: 1vw;
+    border-radius: 1vw;
+    border: 1px solid #ddd;
+    font-size: 1.2vw;
     background-color: white;
 }
 
 .signin-button {
-    padding: 1.2vw; /* Increased padding */
+    padding: 1.2vw;
     border-radius: 0.7vw;
     border: none;
     background-color: #004c9b;
     color: white;
     cursor: pointer;
-    font-size: 1.4vw; /* Increased font size */
+    font-size: 1.4vw;
 }
 
 .signin-text {
     text-align: center;
-    margin-top: 1.8vw; /* Increased margin-top */
-    font-size: 1.2vw; /* Increased font size */
+    margin-top: 1.8vw;
+    font-size: 1.2vw;
     background-color: white;
 }
 
@@ -81,7 +98,6 @@ a {
     display:inline-block;
     cursor:pointer;
 
-    margin:auto;
     margin-left:0;
     margin-right:0.7vw;
 
@@ -123,52 +139,80 @@ input[type="radio"]:checked + .radio_label0 {
     margin-bottom:0;
 }
 
-/*
 
-input[type="radio"] {
-    display:none;
+@media (max-width:500px) {
+    .signin-body {
+        margin-top:5vw;
+    }
+    
+    .signin-container {
+        width: 70%;
+        margin: 0vw auto;
+        padding: 4vw;
+    }
+    
+    .post-ad-container {
+        width: 90%;
+        margin: 4vw auto;
+        padding: 5vw;
+        border-radius: 0.5vw;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background-color: white;
+    }
+    
+    .signin-title {
+        font-size: 4vw;
+        margin-bottom: 4vw;
+    }
+    
+    .signin-form {
+        gap: 3vw;
+    }
+    
+    .signin-input {
+        padding: 2vw;
+        font-size: 3vw;
+    }
+    
+    
+    .signin-button {
+        padding: 3vw;
+        font-size: 4vw;
+    }
+    
+    .signin-text {
+        text-align: center;
+        margin-top: 4vw;
+        font-size: 3vw;
+        background-color: white;
+    }
+    
+    a {
+        background-color: white;
+    }
+    
+    .signin-input label {
+        display: block;
+        margin-bottom:1vw;
+    }
+    
+    .signin-input input[type="radio"] {
+        display:none;
+    }
+    
+    .radio_label0 {
+        display:inline-block;
+        cursor:pointer;
+    
+        margin-left:0;
+        margin-right:2vw;
+    
+        height:2vw;
+        width:2vw;
+    
+        border: 0.6vw solid rgb(200,200,200);
+        border-radius: 1vw;
+        background-color:white;
+    }
+    
 }
-
-
-.radio_label0 {
-    display:inline-block;
-    cursor:pointer;
-    margin-right:1vw;
-
-    margin:auto;
-    margin-left:0;
-    margin-right:0.7vw;
-
-    height:0.6vw;
-    width:0.6vw;
-
-    border: 0.4vw solid rgb(200,200,200);
-    border-radius: 1vw;
-    background-color:white;
-}
-
-.radio_label {
-    display:inline-block;
-    cursor:pointer;
-
-    margin:auto;
-    margin-left:0;
-    margin-right:0.7vw;
-
-    height:0.6vw;
-    width:0.6vw;
-
-    border: 0.4vw solid rgb(200,200,200);
-    border-radius: 1vw;
-    background-color:white;
-}
-
-input[type="radio"]:checked + .radio_label0 {
-    border-color: blue;
-}
-
-input[type="radio"]:checked + .radio_label {
-    border-color: blue;
-}
-
-*/

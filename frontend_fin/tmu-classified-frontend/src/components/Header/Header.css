@@ -56,3 +56,43 @@
 .header-button-profile {
     display:none;
 }
+
+@media (max-width:500px) {
+    .header-container {
+        width:90%;
+        margin-top:4vw;
+    }
+
+    .header-logo-link {
+        width:20%;
+    }
+
+    .header-button, .header-button-profile {
+        font-size: 3vw;
+        margin-right: 2vw;
+        padding: 1vw 1.5vw;
+        border-radius: 1vw;
+    }
+    
+    .big-button {
+        font-size: 3vw;
+        font-weight: bold;
+        padding: 2vw 2vw;
+        margin-left: 2vw;
+        margin-right:0;
+    }
+    
+    .header-button-group {
+        display: flex;
+        align-items: center;
+    }
+    
+    .header-button-group button:hover {
+        transform: scale(1.1); 
+    }
+    
+    .header-button-profile {
+        display:none;
+    }
+
+}

@@ -11,8 +11,8 @@ const Header = () => {
                 <img className="header-logo" src={logo} alt="Logo" />
             </Link>
             <div className="header-button-group">
-                <Link className='link header-button' to='/Signin'>Login</Link> <span></span>
                 <Link className='link header-button' to='/Register' >Sign Up</Link> <span></span>
+                <Link className='link header-button' to='/Signin'>Login</Link> <span></span>
                 <Link className='link big-button header-button' to='/PostAd'>Post Ad!</Link> <span></span>
                 <Link className='link header-button-profile' to='/Profile'>Profile</Link> <span></span>
             </div>

@@ -1,12 +1,13 @@
 .flat-ad-card {
-    width: 90%;
-    height: 12rem;
+    width: 95%;
+    margin:auto;
+    margin-bottom:2vw;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
+    padding: 1vw;
     background-color: white;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .flat-ad-image {

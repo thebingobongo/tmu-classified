@@ -25,3 +25,30 @@
     justify-content:flex-start;
     align-items: center;
 }
+
+@media (max-width:500px) {
+    .ad-section {
+        width:90%;
+        margin-top: 2vw;
+    }
+    
+    .ad-container {
+        padding: 2vw;
+        border-radius: 1vw;
+        background-color: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); 
+    }
+    
+    .ad-section-title {
+        background-color: white;
+        padding: 0vw;
+        font-size:3.5vw;
+    }
+    
+    .ad-title-container {
+        background-color: white;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+    }
+}
