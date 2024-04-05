@@ -22,7 +22,7 @@ function App() {
               <Route path="/Register" element={<Register />} />
               <Route path="/SignIn" element={<SignIn />} />
               <Route path="/PostAd" element={<PostAd />} />
-              <Route path="/AdView" element={<AdView />} />
+              <Route path="/AdView/:ad_id" element={<AdView />} />
               <Route path='/SearchResults' element={<SearchResults />} />
               <Route path='/Profile' element={<Profile />} />
             </Routes>
