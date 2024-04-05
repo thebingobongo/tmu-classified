@@ -15,7 +15,7 @@ const Header = () => {
         <div className="header-container">
             <Link className='header-logo-link' to='/'>
                 <img className="header-logo" src={logo} alt="Logo" />
-            </div>
+            </Link>
             <div className="header-button-group">
                 {!isLoggedIn && <Link className='link header-button' to='/Register' >Sign Up</Link>}
                 {!isLoggedIn && <Link className='link header-button' to='/Signin'>Login</Link>}
