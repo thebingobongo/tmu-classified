@@ -28,6 +28,12 @@
     margin-top:1vw;
 }
 
+.search-results-page .flat-ad-container {
+    width:75%;
+    margin:auto;
+}
+
+
 @media (max-width:500px) {
 
     .flat-ad-section {
@@ -53,4 +59,11 @@
         align-items: start;
     }
 
+    .search-results-page .flat-ad-container {
+        width:90%;
+        margin:auto;
+    }
+    
+
 }
+
