@@ -12,12 +12,20 @@ const PostAd = () => {
     const [price, setPrice] = useState('');
     const [city, setCity] = useState('');
     const [error, setError] = useState('');
+    const [file, setFile] = useState(null);
+
+    const handleFileChange = (e) => {
+        setFile(e.target.files[0]);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!title || !description || !category || !subCategory || !price || !city) {
             setError('All fields are required.');
             return;
+        }
+        if (file) {
+            formData.append('image', file);
         }
         if (category === '') {
             setError('Please select a category.');
@@ -28,21 +36,23 @@ const PostAd = () => {
             return;
         }
         const token = sessionStorage.getItem('token');
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('description', description);
+        formData.append('category', category);
+        formData.append('sub_category', subCategory);
+        formData.append('price', price);
+        formData.append('city', city);
+        // Assuming you have a state for the file input
+        formData.append('image', file); // 'file' is the state for the file input
+    
         fetch('http://127.0.0.1:8000/post_ad/', {
             method: 'POST',
             headers: {
                 'Authorization': `Token ${token}`,
                 'accept': 'application/json',
-                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                title,
-                description,
-                category,
-                sub_category: subCategory,
-                price,
-                city
-            })
+            body: formData
         })
         .then(response => response.json())
         .then(data => {
@@ -53,6 +63,7 @@ const PostAd = () => {
             }
         });
     };
+    
 
     return (
         <div className='post-ad-page'>
@@ -98,7 +109,7 @@ const PostAd = () => {
                         <option value="North York">North York</option>
                         <option value="Mississauga">Mississauga</option>
                     </select>
-                    <input type="file" className="signin-input" />
+                    <input type="file" className="signin-input" onChange={handleFileChange} />
                     <button type="submit" className="signin-button">Post Ad</button>
                 </form>
             </div>

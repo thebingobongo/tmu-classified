@@ -64,15 +64,20 @@ class SingleAdSerializer(serializers.ModelSerializer):
 class PostAdSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ad
-        fields = ['title', 'description', 'category', 'sub_category', 'price', 'city']
+        fields = ['title', 'description', 'category', 'sub_category', 'price', 'city', 'image']  # Include 'image' field
 
     def create(self, validated_data):
         request = self.context.get("request")
         if request and hasattr(request, "user"):
             user = request.user
+        image = validated_data.pop('image', None)  # Get the image file from validated_data
         ad = Ad.objects.create(**validated_data)
+        if image is not None:
+            ad.image = image  # Assign the image file to the 'image' field of the ad
+            ad.save()  # Save the ad again to store the image file
         UserAdRelation.objects.create(user=user, ad=ad)
         return ad
+
 
 
 
