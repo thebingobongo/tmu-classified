@@ -36,6 +36,7 @@ const AdSection = ({ numCards, title }) => {
                 <Swiper
                     spaceBetween={0}
                     slidesPerView={slidesPerView}
+                    navigation
                     loop
                 >
                     {data.map((item, i) => (
