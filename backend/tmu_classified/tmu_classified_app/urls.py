@@ -7,6 +7,10 @@ from drf_yasg import openapi
 
 from .views import *
 
+admin.site.site_header = "TMUC Admin"
+admin.site.site_title = "TMU Classified Admin Portal"
+admin.site.index_title = "TMU Classified Admin Portal"
+
 schema_view = get_schema_view(
     openapi.Info(
         title="TMU Classified API",
