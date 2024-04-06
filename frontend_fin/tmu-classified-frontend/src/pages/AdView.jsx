@@ -11,8 +11,11 @@ const AdView = () => {
 
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/ads/${ad_id}`)
-      .then((response) => response.json())
-      .then((data) => setAd(data));
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data); 
+            setAd(data);
+        });
   }, [ad_id]);
 
   return (
@@ -20,7 +23,7 @@ const AdView = () => {
         <Header />
         <SearchBar />
         {ad && <AdFocus ad={{   // TODO: add the currentUser as an argument
-            image: ad.image || "/image_missing.jpg", 
+            image: ad.image ,
             title: ad.title,
             description: ad.description,
             location: ad.city,

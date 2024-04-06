@@ -181,9 +181,8 @@ class SearchView(APIView):
         if max_price is not None:
             q_objects &= Q(price__lte=max_price)
 
-        print(q_objects)  # Print the query
+
         ads = Ad.objects.filter(q_objects)
-        print(ads)  # Print the results
         serializer = AdSerializer(ads, many=True)
         return Response(serializer.data)
 

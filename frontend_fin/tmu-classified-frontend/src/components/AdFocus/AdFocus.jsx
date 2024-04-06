@@ -9,12 +9,14 @@ const AdFocus = ({ ad, currentUser, onDelete }) => {
         onDelete(ad.id);
     };
 
+    const imageUrl = image ? `http://localhost:8000${image}` : "/image_missing.jpg";
+
     return (
         <div className='adfocus-section'>
             <div className="adfocus-container">
                 <div className="adfocus-left">
                     <h2 className="adfocus-title">{title}</h2>
-                    <img src={image} alt={title} className="adfocus-image" />
+                    <img src={imageUrl} alt={title} className="adfocus-image" />
                     <p className="adfocus-category">{category}: {subCategory}</p>
                     <p className="adfocus-description">{description}</p>
                 </div>

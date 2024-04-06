@@ -64,7 +64,7 @@ class SingleAdSerializer(serializers.ModelSerializer):
 class PostAdSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ad
-        fields = ['title', 'description', 'category', 'sub_category', 'price', 'city', 'image']  # Include 'image' field
+        fields = ['title', 'description', 'category', 'sub_category', 'price', 'city', 'image']  
 
     def create(self, validated_data):
         request = self.context.get("request")
