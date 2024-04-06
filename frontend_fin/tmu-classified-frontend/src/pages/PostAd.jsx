@@ -24,9 +24,6 @@ const PostAd = () => {
             setError('All fields are required.');
             return;
         }
-        if (file) {
-            formData.append('image', file);
-        }
         if (category === '') {
             setError('Please select a category.');
             return;
@@ -43,9 +40,9 @@ const PostAd = () => {
         formData.append('sub_category', subCategory);
         formData.append('price', price);
         formData.append('city', city);
-        // Assuming you have a state for the file input
-        formData.append('image', file); // 'file' is the state for the file input
-    
+        if (file) {
+            formData.append('image', file); 
+        }
         fetch('http://127.0.0.1:8000/post_ad/', {
             method: 'POST',
             headers: {
