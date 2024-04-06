@@ -37,6 +37,7 @@ const SignIn = () => {
             alert(data.error);
         } else {
             sessionStorage.setItem('token', data.token);
+            sessionStorage.setItem('username', data.username);
             sessionStorage.setItem('loggedin', 'true');
             // Todo: Send the user to the previous page or home page and display a banner showing we logged in ig
 

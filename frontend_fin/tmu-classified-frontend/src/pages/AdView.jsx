@@ -22,7 +22,8 @@ const AdView = () => {
     <div>
         <Header />
         <SearchBar />
-        {ad && <AdFocus ad={{   // TODO: add the currentUser as an argument
+        {ad && <AdFocus ad={{
+            ad_id: ad_id,
             image: ad.image ,
             title: ad.title,
             description: ad.description,
