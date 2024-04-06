@@ -20,13 +20,13 @@ const AdView = () => {
         <Header />
         <SearchBar />
         {ad && <AdFocus ad={{
-            image: ad.image || "/image_missing.jpg", // Replace with your image URL
+            image: ad.image || "/image_missing.jpg", 
             title: ad.title,
             description: ad.description,
             location: ad.city,
             price: `$${ad.price}`,
-            category: ad.category, // Add this line
-            subCategory: ad.sub_category // Add this line
+            category: ad.category, 
+            subCategory: ad.sub_category 
         }} />}
         <Footer />
     </div>
