@@ -7,6 +7,7 @@ from drf_yasg import openapi
 
 from rest_framework import status, viewsets
 from rest_framework.authtoken.models import Token
+from rest_framework.generics import DestroyAPIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -196,4 +197,35 @@ class PostAdView(APIView):
             ad = serializer.save()
             return Response({"ad_id": ad.ad_id}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
 
+class DeleteAdView(DestroyAPIView):
+    queryset = Ad.objects.all()
+    serializer_class = AdSerializer
+    permission_classes = [IsAuthenticated]
+
+    @swagger_auto_schema(request_body=openapi.Schema(
+        type=openapi.TYPE_OBJECT,
+        properties={
+            'ad_id': openapi.Schema(type=openapi.TYPE_STRING, description='UUID of the Ad'),
+            'username': openapi.Schema(type=openapi.TYPE_STRING, description='Username of the User'),
+        }
+    ), responses={200: 'Ad deleted', 403: 'Forbidden', 404: 'Not found'}, tags=['needs_auth'])
+    def delete(self, request, *args, **kwargs):
+        ad_id = request.data.get('ad_id')
+        username = request.data.get('username')
+
+        user = User.objects.filter(username=username).first()
+        if not user or request.user != user:
+            return Response(status=status.HTTP_403_FORBIDDEN)
+
+        ad = Ad.objects.filter(ad_id=ad_id).first()
+        if not ad:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        user_ad_relation = UserAdRelation.objects.filter(user=user, ad=ad)
+        if not user_ad_relation.exists():
+            return Response(status=status.HTTP_403_FORBIDDEN)
+
+        ad.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
