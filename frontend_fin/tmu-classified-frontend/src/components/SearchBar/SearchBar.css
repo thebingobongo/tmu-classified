@@ -59,8 +59,14 @@
 }
 
 @media (max-width:500px) {
-    .search-bar {
+
+    .search-container {
         width:90%;
+        margin: auto;
+        margin-top:1vw;
+    }
+    .search-bar {
+        width:100%;
         margin-top:3vw;
         margin-bottom:2vw;
         padding: 1vw;
