@@ -10,7 +10,7 @@ const FlatAdSection = ({ title, data }) => {
         <FlatAdCard
         key={item.ad_id}
         ad_id={item.ad_id}
-        image={item.image || '/image_missing.jpg'} // Use the image from the data if it exists, otherwise use a default image
+        image= {item.image ? `http://127.0.0.1:8000${item.image}` : "/image_missing.jpg"} // Use the image from the data if it exists, otherwise use a default image
         title={item.title}
         category={item.category}
         subcategory={item.sub_category}
