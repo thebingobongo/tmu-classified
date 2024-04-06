@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './SignIn.css'; // Reusing the same CSS file
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header/Header'
 
 const Register = () => {
@@ -9,6 +9,7 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');  
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -43,6 +44,7 @@ const Register = () => {
             sessionStorage.setItem('token', data.token);
             sessionStorage.setItem('loggedin', 'true');
             setError('');  // Clear the error message
+            navigate('/');
         }
     };
 
