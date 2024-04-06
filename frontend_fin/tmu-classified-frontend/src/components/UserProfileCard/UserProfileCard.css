@@ -96,7 +96,7 @@
     border-radius: 4px;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1.4vw;
     transition: background-color 0.3s;
 }
 
@@ -143,5 +143,10 @@
         font-size: 3vw;
         padding: 2vw;
         border-radius: 1vw;
+    }
+
+    .admin-button {
+        margin-top:2vw;
+        font-size:3.4vw;
     }
 }
