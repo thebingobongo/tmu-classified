@@ -75,6 +75,32 @@
     cursor: pointer;
 }
 
+.admin-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+
+.admin-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.admin-button:hover {
+    background-color: #0056b3;
+}
+
+
 @media (max-width:500px) {
     .user-profile-page {
         width:90%;

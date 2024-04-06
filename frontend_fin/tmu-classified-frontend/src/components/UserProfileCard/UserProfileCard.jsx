@@ -13,6 +13,8 @@ const UserProfileCard = ( ) => {
 
     useEffect(() => {
         const token = sessionStorage.getItem('token');
+    
+        // Fetch user ads
         fetch('http://127.0.0.1:8000/user_ads/', {
             headers: {
                 'Authorization': `Token ${token}`,
@@ -22,9 +24,21 @@ const UserProfileCard = ( ) => {
         .then(response => response.json())
         .then(data => {
             setUserAds(data.map(item => item.ad));
-            setUser(data[0]?.user);
+        });
+    
+        // Fetch user info
+        fetch('http://127.0.0.1:8000/user_info/', {
+            headers: {
+                'Authorization': `Token ${token}`,
+                'accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            setUser(data);
         });
     }, []);
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -63,6 +77,13 @@ const UserProfileCard = ( ) => {
                 <div className="username-text">Username: {user?.username}</div>
                 <div className="email-text">Email: {user?.email}</div>
                 <p className='num-ads'>Posted Ads: {userAds.length}</p>
+                {user?.is_admin && (
+                    <div className="admin-center">
+                        <a href="http://127.0.0.1:8000/admin" target="_blank" rel="noopener noreferrer" className="admin-button">
+                            Go to Admin Page
+                        </a>
+                    </div>
+                )}
             </div>
             <br/>
             <div className='user-profile-card2'>
