@@ -5,7 +5,7 @@ const AdFocus = ({ ad, currentUser, onDelete }) => {
     const { image, title, description, location, price, category, subCategory, username } = ad;
     const isCurrentUserOwner = currentUser === username;
 
-    const handleDelete = () => {
+    const handleDelete = () => {    // deleting the ad
         onDelete(ad.id);
     };
 
