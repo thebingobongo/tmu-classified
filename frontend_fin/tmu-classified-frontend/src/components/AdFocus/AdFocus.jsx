@@ -21,16 +21,16 @@ const AdFocus = ({ ad, currentUser, onDelete }) => {
                     <p className="adfocus-description">{description}</p>
                 </div>
                 <div className="adfocus-right">
-                    <p className="adfocus-username">Posted by: {username}</p> 
                     <p className="adfocus-location">{location}</p>
                     <p className="adfocus-price">{price}</p>
+                    <p className="adfocus-username">Posted by:</p><p className='adfocus-username1'>{username}</p> 
                     
                     {isCurrentUserOwner ? (
                         <button className="adfocus-button" onClick={handleDelete}>Delete Ad</button>
                     ) : (
                         <>
-                            <button className="adfocus-button">Contact</button>
-                            <button className="adfocus-button">Email</button>
+                            <button className="adfocus-button ad-btn1">Contact</button>
+                            <button className="adfocus-button ad-btn2">Email</button>
                         </>
                     )}
                 </div>

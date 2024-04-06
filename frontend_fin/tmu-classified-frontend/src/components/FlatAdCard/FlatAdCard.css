@@ -82,12 +82,12 @@
     }
     
     .flat-ad-section2 {
-        flex:1.3;
+        flex:1;
     }
     
     .flat-ad-section3 {
         background-color: white;
-        flex:0.7;
+        flex:0.8;
         align-items: flex-end;
         border-left:solid 1px rgb(255,220,0);
     }
