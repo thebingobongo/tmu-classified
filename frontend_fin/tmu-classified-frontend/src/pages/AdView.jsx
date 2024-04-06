@@ -24,7 +24,9 @@ const AdView = () => {
             title: ad.title,
             description: ad.description,
             location: ad.city,
-            price: `$${ad.price}`
+            price: `$${ad.price}`,
+            category: ad.category, // Add this line
+            subCategory: ad.sub_category // Add this line
         }} />}
         <Footer />
     </div>
