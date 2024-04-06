@@ -137,12 +137,13 @@ class GetAdView(APIView):
     @swagger_auto_schema(tags=['no_auth'])
     def get(self, request, ad_id):
         try:
-            ad = Ad.objects.get(ad_id=ad_id)
-        except Ad.DoesNotExist:
+            user_ad_relation = UserAdRelation.objects.get(ad__ad_id=ad_id)
+        except UserAdRelation.DoesNotExist:
             return Response({'error': 'Ad not found'}, status=status.HTTP_404_NOT_FOUND)
 
-        serializer = SingleAdSerializer(ad)
+        serializer = SingleAdSerializer(user_ad_relation)
         return Response(serializer.data)
+
 
 
 class SearchView(APIView):

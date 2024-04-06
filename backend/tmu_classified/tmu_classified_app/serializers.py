@@ -39,11 +39,26 @@ class AdSerializer(serializers.ModelSerializer):
 
 
 class SingleAdSerializer(serializers.ModelSerializer):
+    title = serializers.ReadOnlyField(source='ad.title')
     username = serializers.ReadOnlyField(source='user.username')
+    description = serializers.ReadOnlyField(source='ad.description')
+    category = serializers.ReadOnlyField(source='ad.category')
+    sub_category = serializers.ReadOnlyField(source='ad.sub_category')
+    price = serializers.ReadOnlyField(source='ad.price')
+    city = serializers.ReadOnlyField(source='ad.city')
+    image = serializers.SerializerMethodField() 
 
     class Meta:
-        model = Ad
-        fields = ['ad_id', 'username', 'title', 'description','category', 'sub_category', 'price', 'city', 'image']
+        model = UserAdRelation
+        fields = ['ad_id', 'username', 'title', 'description', 'category', 'sub_category', 'price', 'city', 'image']
+
+    def get_image(self, obj):
+        if obj.ad.image and hasattr(obj.ad.image, 'url'):
+            return obj.ad.image.url
+        else:
+            return None
+
+
 
 
 class PostAdSerializer(serializers.ModelSerializer):
