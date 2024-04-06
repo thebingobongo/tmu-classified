@@ -152,5 +152,10 @@ SWAGGER_SETTINGS = {
     }
 }
 
+JAZZMIN_SETTINGS = {
+    "show_ui_builder" : True
+}
+
+
 # To allow all origins
 CORS_ALLOW_ALL_ORIGINS = True
