@@ -14,6 +14,7 @@ const SearchBar = () => {
     };
 
     return (
+        <div className='search-container'>
             <div className="search-bar">
                 <input type="text" placeholder="Search..." className="search-input" value={search} onChange={(e) => setSearch(e.target.value)} />
                 <select className="category-select" value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -25,6 +26,7 @@ const SearchBar = () => {
                 </select>
                 <button type="submit" className="search-button" onClick={handleSearch}>Search</button>
             </div>
+        </div>
     );
 };
 
