@@ -91,6 +91,7 @@
         margin-top:1vw;
         background-color: white;
         width:100%;
+        margin-left:1vw;
     }
     
     .ad-price,
@@ -99,6 +100,7 @@
         margin: 0.4vw 0;
         background-color: white;
         width:100%;
+        margin-left:1vw;
     }
 
 }

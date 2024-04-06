@@ -49,7 +49,7 @@ const AdFocus = ({ ad }) => {
                     <p className="adfocus-username">Posted by:</p><p className='adfocus-username1'>{username}</p> 
                     
                     {isCurrentUserOwner ? (
-                        <button className="adfocus-button" onClick={handleDelete}>Delete Ad</button>
+                        <button className="adfocus-button delete-btn" onClick={handleDelete}>Delete Ad</button>
                     ) : (
                         <>
                             <button className="adfocus-button ad-btn1">Contact</button>

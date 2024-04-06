@@ -91,6 +91,10 @@
     margin-bottom: 16vw;
 }
 
+.delete-btn {
+    background-color: red;
+}
+
 @media (max-width:500px) {
     .adfocus-section {
         margin-top: 4vw;
@@ -175,4 +179,9 @@
     .ad-btn2 {
         margin-bottom:0;
     }
+
+    .delete-btn {
+        background-color: red;
+    }
+    
 }
