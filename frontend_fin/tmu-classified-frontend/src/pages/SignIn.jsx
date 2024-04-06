@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SignIn.css'; // Importing the CSS file
+import './SignIn.css';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import { useAuth } from '../components/AuthContext';
@@ -33,14 +33,11 @@ const SignIn = () => {
         const data = await response.json();
 
         if (response.status === 400) {
-            // Todo: error text on the login prompt
             alert(data.error);
         } else {
             sessionStorage.setItem('token', data.token);
             sessionStorage.setItem('username', data.username);
             sessionStorage.setItem('loggedin', 'true');
-            // Todo: Send the user to the previous page or home page and display a banner showing we logged in ig
-
 
             handleLogin();
             navigate('/');
