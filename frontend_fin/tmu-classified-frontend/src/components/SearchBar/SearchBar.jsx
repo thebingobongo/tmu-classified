@@ -13,6 +13,7 @@ const SearchBar = () => {
         navigate(`/SearchResults?search=${search}&category=${category}`);
     };
 
+    // search bar to type (ad title), select category (wanted, sale, service), subcategory (laptop, phone, etc), location (city)
     return (
         <div className='search-container'>
             <div className="search-bar">

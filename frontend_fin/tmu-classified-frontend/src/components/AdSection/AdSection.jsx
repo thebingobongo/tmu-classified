@@ -8,12 +8,16 @@ const AdSection = ({ numCards, title }) => {
     const [data, setData] = useState([]);
     const [slidesPerView, setSlidesPerView] = useState(4);
 
+
+    // retrieving numCards from server for posts with the given title
     useEffect(() => {
         fetch(`http://127.0.0.1:8000/search?category=${title}&limit=${numCards}`)
             .then((response) => response.json())
             .then((data) => setData(data));
     }, [numCards, title]);
 
+    // 3 per slide on mobile, 4 per slide otherwise
+    // note: no navigation buttons to swipe, must click and drag with the mouse horizontally
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 500) {
@@ -36,7 +40,6 @@ const AdSection = ({ numCards, title }) => {
                 <Swiper
                     spaceBetween={0}
                     slidesPerView={slidesPerView}
-                
                     loop
                 >
                     {data.map((item, i) => (
