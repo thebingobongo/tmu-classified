@@ -1,9 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import './AdFocus.css';
 
 const AdFocus = ({ ad }) => {
-    const navigate = useNavigate();  // Initialize useNavigate
+    const navigate = useNavigate();
     const { ad_id, image, title, description, location, price, category, subCategory, username } = ad;
 
     // Determine if the username of the ad poster is the same as the username stored in session storage
