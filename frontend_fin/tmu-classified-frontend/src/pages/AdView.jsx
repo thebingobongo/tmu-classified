@@ -19,7 +19,7 @@ const AdView = () => {
     <div>
         <Header />
         <SearchBar />
-        {ad && <AdFocus ad={{
+        {ad && <AdFocus ad={{   // TODO: add the currentUser as an argument
             image: ad.image || "/image_missing.jpg", 
             title: ad.title,
             description: ad.description,
