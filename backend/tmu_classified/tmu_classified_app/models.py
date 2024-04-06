@@ -63,7 +63,7 @@ class Ad(models.Model):
     sub_category = models.CharField(max_length=100, verbose_name='Sub Category')
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Price')
     city = models.CharField(max_length=100, verbose_name='City')
-    image = models.ImageField(upload_to='ads/', verbose_name='Image')
+    image = models.ImageField(upload_to='ads/', verbose_name='Image', max_length=500)
 
     def __str__(self):
         return self.title
