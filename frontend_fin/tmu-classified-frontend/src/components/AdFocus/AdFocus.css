@@ -1,8 +1,9 @@
 .adfocus-section {
-    margin-top: 2.5rem;
+    margin-top: 2vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    border:none;;
 }
 
 .adfocus-container {
@@ -11,20 +12,20 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 1vw;
     background-color: white;
 }
 
 .adfocus-left {
     flex: 3;
-    padding: 20px;
+    padding: 2vw;
     border-right: 1px solid #ddd;
     background-color: white;
 }
 
 .adfocus-right {
     flex: 1;
-    padding: 20px;
+    padding: 2vw;
     background-color: white;
     display:flex;
     flex-direction: column;
@@ -32,36 +33,37 @@
 
 .adfocus-image {
     width: auto;
-    height: 25rem;
+    height: 30vw;
+    max-width:40vw;
 }
 
 .adfocus-title {
-    margin-bottom: 20px;
-    font-size: 2rem;
+    margin-bottom: 2vw;
+    font-size: 2vw;
     background-color: white;
 }
 
 .adfocus-category {
-    margin-top: 20px;
-    font-size: 1.25rem;
+    margin-top: 2vw;
+    font-size: 1.5vw;
     background-color: white;
 }
 
 .adfocus-description {
-    margin-top: 20px;
-    font-size: 1.5rem;
+    margin-top: 1.2vw;
+    font-size: 1.25vw;
     background-color: white;
 }
 
 .adfocus-button {
-    padding: 10px;
+    padding: 1vw;
     border-radius: 4px;
     border: none;
     background-color: #007BFF;
     color: white;
     cursor: pointer;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2vw;
+    margin-bottom: 1vw;
 }
 
 .adfocus-username {
@@ -73,13 +75,83 @@
 
 .adfocus-location {
     font-size: 1.5rem;
+    font-size: 2vw;
     background-color: white;
-    margin-bottom: 2rem;
+    margin-bottom: 1vw;
 }
 
 .adfocus-price {
-    font-size: 2rem;
+    font-size: 2vw;
     background-color: white;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-top: 1vw;
+    margin-bottom: 4vw;
+}
+
+@media (max-width:500px) {
+    .adfocus-section {
+        margin-top: 4vw;
+    }
+    
+    .adfocus-container {
+        width: 90%;
+        padding: 2vw;
+    }
+    
+    .adfocus-left {
+        flex: 2;
+        padding: 3vw;
+    }
+    
+    .adfocus-right {
+        flex: 1;
+        padding: 3vw;
+    }
+    
+    .adfocus-image {
+        width: auto;
+        height: 40vw;
+        max-width:42vw;
+    }
+    
+    .adfocus-title {
+        margin-bottom: 2vw;
+        font-size: 3vw;
+        background-color: white;
+    }
+    
+    .adfocus-category {
+        margin-top: 2vw;
+        font-size: 3vw;
+        background-color: white;
+    }
+    
+    .adfocus-description {
+        margin-top: 2vw;
+        font-size: 2.5vw;
+        background-color: white;
+    }
+    
+    .adfocus-button {
+        padding: 2vw;
+        border-radius: 4px;
+        border: none;
+        background-color: #007BFF;
+        color: white;
+        cursor: pointer;
+        font-size: 4vw;
+        margin-bottom: 3vw;
+    }
+    
+    .adfocus-location {
+        font-size: 3vw;
+        background-color: white;
+        margin-bottom: 2vw;
+    }
+    
+    .adfocus-price {
+        font-size: 3vw;
+        background-color: white;
+        margin-top: 1vw;
+        margin-bottom: 10vw;
+    }
 }
