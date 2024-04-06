@@ -1,8 +1,13 @@
 import React from 'react';
 import './AdFocus.css';
 
-const AdFocus = ({ ad }) => {
-    const { image, title, description, location, price, category, subCategory, username } = ad; 
+const AdFocus = ({ ad, currentUser, onDelete }) => {
+    const { image, title, description, location, price, category, subCategory, username } = ad;
+    const isCurrentUserOwner = currentUser === username;
+
+    const handleDelete = () => {
+        onDelete(ad.id);
+    };
 
     return (
         <div className='adfocus-section'>
@@ -17,8 +22,15 @@ const AdFocus = ({ ad }) => {
                     <p className="adfocus-username">Posted by: {username}</p> 
                     <p className="adfocus-location">{location}</p>
                     <p className="adfocus-price">{price}</p>
-                    <button className="adfocus-button">Contact</button>
-                    <button className="adfocus-button">Email</button>
+                    
+                    {isCurrentUserOwner ? (
+                        <button className="adfocus-button" onClick={handleDelete}>Delete Ad</button>
+                    ) : (
+                        <>
+                            <button className="adfocus-button">Contact</button>
+                            <button className="adfocus-button">Email</button>
+                        </>
+                    )}
                 </div>
             </div>
         </div>
