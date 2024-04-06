@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 const AdSection = ({ numCards, title }) => {
     const [data, setData] = useState([]);
+    const [slidesPerView, setSlidesPerView] = useState(4);
 
     useEffect(() => {
         fetch(`http://127.0.0.1:8000/search?category=${title}&limit=${numCards}`)
@@ -13,14 +14,28 @@ const AdSection = ({ numCards, title }) => {
             .then((data) => setData(data));
     }, [numCards, title]);
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 500) {
+                setSlidesPerView(3);
+            } else {
+                setSlidesPerView(4);
+            }
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <div className='ad-section'>
             <div className='ad-container'>
                 <h1 className='ad-section-title'>{title}</h1>
                 <Swiper
                     spaceBetween={0}
-                    slidesPerView={4}
-                    navigation
+                    slidesPerView={slidesPerView}
                     loop
                 >
                     {data.map((item, i) => (
