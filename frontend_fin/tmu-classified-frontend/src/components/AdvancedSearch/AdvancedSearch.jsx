@@ -53,6 +53,12 @@ const AdvancedSearch = () => {
                             <option value="Scarborough">Scarborough</option>
                             <option value="North York">North York</option>
                             <option value="Mississauga">Mississauga</option>
+                            <option value="Brampton">Brampton</option>
+                            <option value="Waterloo">Waterloo</option>
+                            <option value="Oshawa">Oshawa</option>
+                            <option value="Oakville">Oakville</option>
+                            <option value="Etobicoke">Etobicoke</option>
+
                         </select>
                     </div>
                     <div className="advanced-prices">
