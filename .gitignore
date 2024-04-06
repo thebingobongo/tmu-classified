@@ -9,8 +9,6 @@
 # Ignore the local settings file
 local_settings.py
 
-# Ignore the media files (uploaded by users)
-media/
 
 # Ignore any cache files
 __pycache__/
