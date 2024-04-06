@@ -2,7 +2,7 @@ import React from 'react';
 import './AdFocus.css';
 
 const AdFocus = ({ ad }) => {
-    const { image, title, description, location, price, category, subCategory } = ad; // Destructuring the ad object
+    const { image, title, description, location, price, category, subCategory, username } = ad; 
 
     return (
         <div className='adfocus-section'>
@@ -14,6 +14,7 @@ const AdFocus = ({ ad }) => {
                     <p className="adfocus-description">{description}</p>
                 </div>
                 <div className="adfocus-right">
+                    <p className="adfocus-username">Posted by: {username}</p> 
                     <p className="adfocus-location">{location}</p>
                     <p className="adfocus-price">{price}</p>
                     <button className="adfocus-button">Contact</button>

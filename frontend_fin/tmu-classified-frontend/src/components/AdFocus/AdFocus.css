@@ -64,8 +64,15 @@
     margin-bottom: 1rem;
 }
 
+.adfocus-username {
+    font-size: 1.5rem;
+    background-color: white;
+    margin-bottom: 1.2rem;
+
+}
+
 .adfocus-location {
-    font-size: 2rem;
+    font-size: 1.5rem;
     background-color: white;
     margin-bottom: 2rem;
 }
