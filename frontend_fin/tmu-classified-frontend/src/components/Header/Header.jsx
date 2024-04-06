@@ -1,12 +1,14 @@
 import React from 'react';
 import './Header.css';
-import logo from '../../assets/TMU-rgb.png'; // Import the logo file
+import logo from '../../assets/TMU-rgb.png';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../AuthContext'; // Import useAuth hook
+import { useAuth } from '../AuthContext';
 
 const Header = () => {
     const { isLoggedIn, handleLogout } = useAuth();
 
+    // link to home page (tmu logo)
+    // sign up & login buttons rendered if user is NOT logged in, otherwise they are replaced by profile and logout buttons
     return (
         <div className="header-container">
             <Link className='header-logo-link' to='/'>

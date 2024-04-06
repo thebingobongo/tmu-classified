@@ -9,7 +9,7 @@ import PostAd from './pages/PostAd'
 import AdView from './pages/AdView'
 import Profile from './pages/Profile';
 
-import { AuthProvider } from './components/AuthContext';
+import { AuthProvider } from './components/AuthContext'; // to manage authorization globally, for all pages
 
 function App() {
 
