@@ -1,12 +1,35 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
 import './AdFocus.css';
 
-const AdFocus = ({ ad, currentUser, onDelete }) => {
-    const { image, title, description, location, price, category, subCategory, username } = ad;
-    const isCurrentUserOwner = currentUser === username;
+const AdFocus = ({ ad }) => {
+    const navigate = useNavigate();  // Initialize useNavigate
+    const { ad_id, image, title, description, location, price, category, subCategory, username } = ad;
 
-    const handleDelete = () => {    // deleting the ad
-        onDelete(ad.id);
+    // Determine if the username of the ad poster is the same as the username stored in session storage
+    const isCurrentUserOwner = sessionStorage.getItem('username') === username;
+    const token = sessionStorage.getItem('token');
+
+    const handleDelete = () => {    // Delete the ad using backend endpoint 
+        fetch('http://127.0.0.1:8000/delete_ad/', {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Token ${token}`,
+                'accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                "ad_id": ad_id,
+                "username": username
+            })
+        }).then(response => {
+            if (response.ok) {
+                // If the ad was successfully deleted, navigate back to the home page
+                navigate('/');
+            } else {
+                console.error('Failed to delete ad');
+            }
+        });
     };
 
     const imageUrl = image ? `http://localhost:8000${image}` : "/image_missing.jpg";

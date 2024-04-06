@@ -43,6 +43,7 @@ const Register = () => {
         } else {
             sessionStorage.setItem('token', data.token);
             sessionStorage.setItem('loggedin', 'true');
+            sessionStorage.setItem('username', data.username);
             setError('');  // Clear the error message
             navigate('/');
         }
